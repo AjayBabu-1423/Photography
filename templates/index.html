@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VIP VisualEye's Photography</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --gold:#C9A84C;--gold2:#E8C96A;--gold3:#F5E090;
+  --black:#0A0A0A;--dark:#111111;--card:#161616;--card2:#1C1C1C;
+  --silver:#C0C0C0;--text:#F0EDE8;--muted:#7A7870;
+  --border:rgba(201,168,76,0.15);--border2:rgba(201,168,76,0.3);
+  --green:#4ECB7F;--red:#E07070;--blue:#7EB8F7;
+  --radius:4px;--radius-lg:8px;
+  --font-d:'Cinzel',serif;--font-b:'Jost',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--black);color:var(--text);font-family:var(--font-b);min-height:100vh;overflow-x:hidden;}
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:0.85rem 1.5rem;background:rgba(10,10,10,0.97);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border);gap:0.5rem;flex-wrap:wrap;}
+.logo-wrap{display:flex;flex-direction:column;line-height:1;flex-shrink:0;}
+.logo-name{font-family:var(--font-d);font-size:1.25rem;font-weight:900;background:linear-gradient(135deg,#C9A84C,#F5E090,#C9A84C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:0.12em;}
+.logo-sub{font-size:0.5rem;letter-spacing:0.35em;color:var(--silver);text-transform:uppercase;margin-top:1px;}
+.nav-links{display:flex;gap:0;flex-wrap:wrap;}
+.nb{background:none;border:none;color:var(--muted);font-family:var(--font-b);font-size:0.72rem;padding:0.45rem 0.8rem;border-radius:var(--radius);cursor:pointer;transition:all 0.18s;letter-spacing:0.07em;text-transform:uppercase;white-space:nowrap;}
+.nb:hover,.nb.active{color:var(--gold);background:rgba(201,168,76,0.07);}
+.nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--black);border:none;font-family:var(--font-d);font-size:0.68rem;font-weight:700;padding:0.55rem 1.2rem;border-radius:var(--radius);cursor:pointer;transition:all 0.2s;letter-spacing:0.1em;white-space:nowrap;}
+.nav-cta:hover{transform:scale(1.03);box-shadow:0 4px 18px rgba(201,168,76,0.35);}
+/* PAGES */
+.page{display:none;padding:1.75rem 1.5rem;max-width:1200px;margin:0 auto;}
+.page.active{display:block;animation:fadeUp 0.32s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+/* SECTION HEADER */
+.sh{margin-bottom:1.5rem;}
+.sh h2{font-family:var(--font-d);font-size:1.4rem;font-weight:700;letter-spacing:0.07em;}
+.sh p{font-size:0.82rem;color:var(--muted);margin-top:0.35rem;}
+.gr{display:flex;align-items:center;gap:0.6rem;margin:0.6rem 0;}
+.gr::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border2),transparent);max-width:100px;}
+.gr-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+/* CARDS */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.4rem;}
+.card2{background:var(--card2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.4rem;}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.1rem;}
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin:1.5rem 0;}
+.stat{background:var(--card);padding:1.25rem 1rem;text-align:center;}
+.stat-n{font-family:var(--font-d);font-size:1.65rem;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.stat-l{font-size:0.68rem;color:var(--muted);margin-top:0.25rem;letter-spacing:0.1em;text-transform:uppercase;}
+/* BADGES */
+.badge{display:inline-block;font-size:0.65rem;font-weight:500;padding:0.22rem 0.6rem;border-radius:2px;letter-spacing:0.07em;text-transform:uppercase;}
+.bg{background:rgba(78,203,127,0.12);color:var(--green);border:1px solid rgba(78,203,127,0.2);}
+.br{background:rgba(224,112,112,0.12);color:var(--red);border:1px solid rgba(224,112,112,0.2);}
+.by{background:rgba(201,168,76,0.12);color:var(--gold2);border:1px solid rgba(201,168,76,0.2);}
+.bs{background:rgba(192,192,192,0.1);color:var(--silver);border:1px solid rgba(192,192,192,0.15);}
+.bm{background:rgba(255,255,255,0.04);color:var(--muted);border:1px solid rgba(255,255,255,0.06);}
+/* BUTTONS */
+.btn{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--black);border:none;font-family:var(--font-d);font-size:0.68rem;font-weight:700;padding:0.75rem 1.75rem;border-radius:var(--radius);cursor:pointer;transition:all 0.2s;letter-spacing:0.12em;text-transform:uppercase;}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(201,168,76,0.35);}
+.btn-o{background:transparent;color:var(--gold);border:1px solid var(--border2);font-family:var(--font-d);font-size:0.68rem;padding:0.75rem 1.75rem;border-radius:var(--radius);cursor:pointer;transition:all 0.2s;letter-spacing:0.12em;text-transform:uppercase;}
+.btn-o:hover{background:rgba(201,168,76,0.07);}
+.btn-sm{padding:0.42rem 0.9rem;font-size:0.65rem;}
+.btn-icon{background:none;border:1px solid var(--border);color:var(--muted);border-radius:var(--radius);padding:0.28rem 0.6rem;font-size:0.7rem;cursor:pointer;font-family:var(--font-b);transition:all 0.18s;}
+.btn-icon:hover{border-color:var(--border2);color:var(--gold);}
+.btn-danger{background:none;border:1px solid rgba(224,112,112,0.25);color:var(--red);border-radius:var(--radius);padding:0.28rem 0.6rem;font-size:0.7rem;cursor:pointer;font-family:var(--font-b);}
+.btn-danger:hover{background:rgba(224,112,112,0.08);}
+/* FORMS */
+label{display:block;font-size:0.68rem;font-weight:500;color:var(--muted);margin-bottom:0.35rem;margin-top:0.9rem;letter-spacing:0.1em;text-transform:uppercase;}
+input,select,textarea{width:100%;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--radius);padding:0.7rem 0.9rem;color:var(--text);font-family:var(--font-b);font-size:0.85rem;transition:border-color 0.2s;}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);background:rgba(201,168,76,0.03);}
+textarea{resize:vertical;min-height:90px;}
+select option{background:var(--dark);}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;}
+@media(max-width:580px){.frow{grid-template-columns:1fr;}.nav-links{display:none;}}
+/* TABLE */
+.tw{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:0.83rem;}
+th{text-align:left;padding:0.8rem 1rem;color:var(--gold);font-weight:500;font-size:0.64rem;text-transform:uppercase;letter-spacing:0.12em;border-bottom:1px solid var(--border2);}
+td{padding:0.85rem 1rem;border-bottom:1px solid var(--border);vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(201,168,76,0.025);}
+/* PACKAGES */
+.pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0.85rem;margin:0.85rem 0;}
+.pkg{border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.1rem;cursor:pointer;transition:all 0.18s;position:relative;}
+.pkg:hover{border-color:var(--border2);}
+.pkg.sel{border-color:var(--gold);background:rgba(201,168,76,0.05);}
+.pkg.sel::after{content:'✦';position:absolute;top:8px;right:10px;color:var(--gold);font-size:0.75rem;}
+.pkg-n{font-family:var(--font-d);font-size:0.75rem;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.4rem;}
+.pkg-p{font-family:var(--font-d);font-size:1.3rem;font-weight:700;}
+.pkg-p span{font-size:0.72rem;color:var(--muted);font-family:var(--font-b);}
+.pkg-f{margin-top:0.7rem;}
+.pkg-f li{font-size:0.75rem;color:var(--muted);list-style:none;padding:0.18rem 0;}
+.pkg-f li::before{content:'— ';color:var(--gold);font-size:0.65rem;}
+/* GALLERY */
+.gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;}
+.gal-item{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:1;cursor:pointer;border:1px solid var(--border);background:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:2.2rem;}
+.gal-ov{position:absolute;inset:0;background:rgba(10,10,10,0.8);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s;}
+.gal-item:hover .gal-ov{opacity:1;}
+.prog{height:2px;background:var(--border);border-radius:1px;margin-top:0.6rem;}
+.prog-f{height:100%;border-radius:1px;background:linear-gradient(90deg,var(--gold),var(--gold3));}
+/* METHOD BTNS */
+.meth-row{display:flex;gap:0.55rem;flex-wrap:wrap;margin-top:0.5rem;}
+.meth{flex:1;min-width:80px;background:var(--card2);border:1px solid var(--border);border-radius:var(--radius);padding:0.6rem;text-align:center;cursor:pointer;transition:all 0.18s;font-size:0.75rem;color:var(--muted);}
+.meth:hover,.meth.sel{border-color:var(--border2);color:var(--gold);background:rgba(201,168,76,0.06);}
+/* CLIENT ROW */
+.cl-row{display:flex;align-items:center;gap:0.9rem;padding:0.9rem;border-radius:var(--radius);transition:background 0.18s;border-bottom:1px solid var(--border);}
+.cl-row:last-child{border-bottom:none;}
+.cl-row:hover{background:rgba(201,168,76,0.025);}
+.av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-weight:700;font-size:0.8rem;flex-shrink:0;border:1px solid var(--border2);background:rgba(201,168,76,0.08);color:var(--gold);}
+/* REMINDER ITEM */
+.rem-item{display:flex;gap:0.9rem;padding:1rem;border-radius:var(--radius-lg);background:var(--card2);border:1px solid var(--border);margin-bottom:0.65rem;align-items:flex-start;}
+.rem-icon{width:34px;height:34px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;background:rgba(201,168,76,0.1);}
+/* CONTACT */
+.con-item{display:flex;align-items:center;gap:0.9rem;padding:0.9rem;background:rgba(201,168,76,0.04);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:0.65rem;}
+.con-icon{width:36px;height:36px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0;background:rgba(201,168,76,0.1);border:1px solid var(--border2);}
+/* QUICK ACTION */
+.qa{background:rgba(201,168,76,0.04);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.1rem;text-align:left;cursor:pointer;color:var(--text);transition:all 0.2s;width:100%;}
+.qa:hover{border-color:var(--border2);background:rgba(201,168,76,0.07);}
+.qa-icon{font-size:1.3rem;margin-bottom:0.5rem;display:block;}
+.qa-t{font-family:var(--font-d);font-size:0.73rem;letter-spacing:0.09em;color:var(--gold);}
+.qa-s{font-size:0.72rem;color:var(--muted);margin-top:0.2rem;}
+/* ALERT */
+.alert{padding:0.9rem 1.1rem;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-left:2px solid var(--gold);border-radius:var(--radius-lg);}
+/* CALENDAR */
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;}
+.cal-dn{text-align:center;font-size:0.62rem;color:var(--gold);padding:0.45rem 0;letter-spacing:0.1em;text-transform:uppercase;}
+.cal-d{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:0.8rem;border-radius:var(--radius);cursor:pointer;transition:all 0.18s;color:var(--muted);position:relative;}
+.cal-d:hover{background:rgba(201,168,76,0.08);color:var(--text);}
+.cal-d.today{background:rgba(201,168,76,0.12);color:var(--gold);font-weight:600;}
+.cal-d.has-ev::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:var(--gold);}
+.cal-d.picked{background:var(--gold);color:var(--black);font-weight:700;}
+/* MODAL */
+.mo{position:fixed;inset:0;background:rgba(5,5,5,0.88);display:none;align-items:center;justify-content:center;z-index:200;padding:1rem;backdrop-filter:blur(4px);}
+.mo.open{display:flex;}
+.mo-box{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:1.75rem;max-width:500px;width:100%;max-height:88vh;overflow-y:auto;animation:fadeUp 0.22s ease;}
+.mo-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.3rem;padding-bottom:0.9rem;border-bottom:1px solid var(--border);}
+.mo-hd h3{font-family:var(--font-d);font-size:1rem;letter-spacing:0.08em;color:var(--gold);}
+.mo-x{background:none;border:none;color:var(--muted);font-size:1rem;cursor:pointer;width:26px;height:26px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;}
+.mo-x:hover{background:rgba(255,255,255,0.06);color:var(--text);}
+/* VISITING CARD */
+.card-scene{width:320px;height:196px;perspective:1000px;margin:0 auto;cursor:pointer;}
+.card-3d{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 0.7s cubic-bezier(.4,0,.2,1);}
+.card-scene.flipped .card-3d,.card-scene:hover .card-3d{transform:rotateY(180deg);}
+.card-face{position:absolute;inset:0;border-radius:12px;backface-visibility:hidden;overflow:hidden;}
+.card-back{transform:rotateY(180deg);}
+.cf-front{width:100%;height:100%;background:#0d0d0d;position:relative;display:flex;align-items:center;justify-content:center;}
+.cf-front::before{content:'';position:absolute;top:-20px;right:-15px;width:130px;height:240px;background:linear-gradient(160deg,#B8860B,#C9A84C,#8B6914);clip-path:polygon(28% 0%,100% 0%,100% 100%,0% 100%);opacity:0.85;}
+.cf-front::after{content:'';position:absolute;bottom:-30px;left:-15px;width:90px;height:180px;background:linear-gradient(160deg,#8B6914,#C9A84C);clip-path:polygon(0% 0%,58% 0%,100% 100%,0% 100%);opacity:0.6;}
+.cf-back{width:100%;height:100%;background:#0d0d0d;position:relative;display:flex;flex-direction:column;justify-content:center;padding:0 1.25rem;}
+.cf-back::before{content:'';position:absolute;top:-15px;right:-10px;width:100px;height:220px;background:linear-gradient(160deg,#B8860B,#C9A84C);clip-path:polygon(28% 0%,100% 0%,100% 100%,0% 100%);opacity:0.85;}
+.cf-back::after{content:'';position:absolute;bottom:-25px;left:-12px;width:75px;height:150px;background:linear-gradient(160deg,#8B6914,#C9A84C);clip-path:polygon(0% 0%,55% 0%,100% 100%,0% 100%);opacity:0.6;}
+/* FRAMES */
+.fr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;}
+.fr-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;transition:all 0.22s;}
+.fr-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.fr-card.sel-fr{border-color:var(--gold);box-shadow:0 0 0 1px rgba(201,168,76,0.25);}
+.fr-prev{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:#111;overflow:hidden;}
+.fr-lbl{padding:0.65rem 0.9rem;}
+.fr-name{font-family:var(--font-d);font-size:0.68rem;letter-spacing:0.09em;color:var(--gold);}
+.fr-type{font-size:0.65rem;color:var(--muted);margin-top:1px;}
+.fr-price{font-size:0.68rem;color:var(--gold2);font-family:var(--font-d);margin-top:2px;}
+.upload-zone{border:2px dashed var(--border2);border-radius:var(--radius-lg);padding:2rem;text-align:center;cursor:pointer;transition:all 0.2s;background:rgba(201,168,76,0.02);}
+.upload-zone:hover{background:rgba(201,168,76,0.05);border-color:var(--gold);}
+/* PRICE LIST */
+.pl-pkg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-bottom:1.25rem;}
+.pl-pkg{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all 0.2s;}
+.pl-pkg:hover{border-color:var(--border2);}
+.pl-pkg.feat{border-color:var(--gold);}
+.pl-top{padding:1.1rem;border-bottom:1px solid var(--border);}
+.pl-amt{font-family:var(--font-d);font-size:1.65rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.pl-body{padding:0.9rem 1.1rem;}
+.pl-item{display:flex;align-items:flex-start;gap:0.45rem;padding:0.25rem 0;font-size:0.77rem;color:var(--muted);}
+.pl-item::before{content:'✦';color:var(--gold);font-size:0.58rem;margin-top:0.15rem;flex-shrink:0;}
+.pl-table th{font-size:0.62rem;}
+.pl-table td{font-size:0.8rem;}
+/* TOAST */
+#toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--card);border:1px solid var(--gold);color:var(--gold);padding:0.75rem 1.25rem;border-radius:var(--radius-lg);font-size:0.82rem;transform:translateY(100px);opacity:0;transition:all 0.28s;z-index:999;letter-spacing:0.04em;}
+#toast.show{transform:translateY(0);opacity:1;}
+/* LOADER */
+.loading{display:flex;align-items:center;justify-content:center;padding:2.5rem;color:var(--muted);font-size:0.82rem;letter-spacing:0.08em;}
+.spin{width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin 0.7s linear infinite;margin-right:0.65rem;}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* EMPTY */
+.empty{padding:2.5rem;text-align:center;color:var(--muted);font-size:0.82rem;}
+/* SECTION TAB */
+.tab-btns{display:flex;gap:0.5rem;margin-bottom:1.25rem;flex-wrap:wrap;}
+.tab-btn{background:rgba(201,168,76,0.04);border:1px solid var(--border);color:var(--muted);font-family:var(--font-b);font-size:0.72rem;padding:0.45rem 1rem;border-radius:var(--radius);cursor:pointer;transition:all 0.18s;letter-spacing:0.06em;}
+.tab-btn.active{border-color:var(--border2);color:var(--gold);background:rgba(201,168,76,0.08);}
+::-webkit-scrollbar{width:5px;height:5px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
+/* ── AUTH SCREENS ── */
+#auth-wall{position:fixed;inset:0;background:var(--black);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1.5rem;}
+#auth-wall.hidden{display:none;}
+.auth-box{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:2.5rem 2rem;max-width:380px;width:100%;text-align:center;animation:fadeUp 0.35s ease;}
+.auth-logo{font-family:var(--font-d);font-size:2rem;font-weight:900;background:linear-gradient(135deg,#C9A84C,#F5E090,#C9A84C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:0.08em;margin-bottom:0.2rem;}
+.auth-sub{font-size:0.6rem;letter-spacing:0.4em;color:var(--silver);text-transform:uppercase;margin-bottom:2rem;}
+.auth-err{background:rgba(224,112,112,0.1);border:1px solid rgba(224,112,112,0.25);color:var(--red);padding:0.6rem 0.9rem;border-radius:var(--radius);font-size:0.78rem;margin-top:0.75rem;display:none;}
+/* ── CUSTOMER BADGE ── */
+.cust-badge{background:rgba(201,168,76,0.08);border:1px solid var(--border2);border-radius:var(--radius);padding:0.35rem 0.85rem;font-size:0.7rem;color:var(--gold);letter-spacing:0.06em;}
+/* ── CLIENT LINK TABLE ── */
+.link-row{display:flex;align-items:center;gap:0.5rem;padding:0.75rem 0;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+.link-row:last-child{border-bottom:none;}
+.link-chip{background:rgba(201,168,76,0.05);border:1px solid var(--border);border-radius:var(--radius);padding:0.28rem 0.6rem;font-size:0.68rem;color:var(--muted);font-family:monospace;word-break:break-all;flex:1;}
+</style>
+</head>
+<body data-mode="{{ mode }}" data-customer-name="{{ session.get('customer_name', '') }}">
+
+<!-- ═══ AUTH WALL ═══ -->
+<div id="auth-wall">
+  <!-- LOGIN SCREEN -->
+  <div class="auth-box" id="screen-login">
+    <div class="auth-logo">👑 VIP</div>
+    <div class="auth-sub">VisualEye's Photography</div>
+    <div style="font-family:var(--font-d);font-size:0.78rem;letter-spacing:0.1em;color:var(--gold);margin-bottom:1.25rem;">Admin Login</div>
+    <label style="text-align:left;">Password</label>
+    <input type="password" id="admin-pw" placeholder="Enter admin password" onkeydown="if(event.key==='Enter')doAdminLogin()"/>
+    <div class="auth-err" id="login-err">Incorrect password. Please try again.</div>
+    <button class="btn" style="width:100%;margin-top:1.25rem;" onclick="doAdminLogin()">Login as Admin</button>
+    <div style="margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--border);">
+      <div style="font-size:0.72rem;color:var(--muted);margin-bottom:0.5rem;">Are you a client? Use your personal link.</div>
+      <div style="font-size:0.65rem;color:var(--muted);opacity:0.6;">📋 Check your email or WhatsApp for your link</div>
+    </div>
+  </div>
+  <!-- INVALID TOKEN -->
+  <div class="auth-box" id="screen-invalid" style="display:none;">
+    <div style="font-size:2.5rem;margin-bottom:1rem;">⛔</div>
+    <div style="font-family:var(--font-d);font-size:1rem;color:var(--red);margin-bottom:0.5rem;">Invalid Link</div>
+    <div style="font-size:0.82rem;color:var(--muted);">This link has expired or is no longer valid. Please contact VIP VisualEye's Photography for a new link.</div>
+    <div style="margin-top:1.5rem;font-size:0.78rem;color:var(--muted);">📞 97155 54025 / 9894283672</div>
+  </div>
+</div>
+
+<nav>
+  <div class="logo-wrap">
+    <div class="logo-name">VIP VisualEye's</div>
+    <div class="logo-sub">Photography & Videography</div>
+  </div>
+  <!-- ADMIN nav (all sections) -->
+  <div class="nav-links" id="navLinks-admin" style="display:none;">
+    <button class="nb active" onclick="nav('dashboard',this)">Dashboard</button>
+    <button class="nb" onclick="nav('booking',this)">Booking</button>
+    <button class="nb" onclick="nav('gallery',this)">Gallery</button>
+    <button class="nb" onclick="nav('payments',this)">Payments</button>
+    <button class="nb" onclick="nav('clients',this)">Clients</button>
+    <button class="nb" onclick="nav('reminders',this)">Reminders</button>
+    <button class="nb" onclick="nav('contact',this)">Contact</button>
+    <button class="nb" onclick="nav('card',this)">My Card</button>
+    <button class="nb" onclick="nav('frames',this)">Frames</button>
+    <button class="nb" onclick="nav('access',this)" style="color:var(--gold);">🔗 Client Links</button>
+  </div>
+  <!-- CUSTOMER nav (limited sections) -->
+  <div class="nav-links" id="navLinks-customer" style="display:none;">
+    <button class="nb active" onclick="nav('booking',this)">📅 My Booking</button>
+    <button class="nb" onclick="nav('gallery',this)">🖼️ My Photos</button>
+    <button class="nb" onclick="nav('card',this)">📇 Card</button>
+    <button class="nb" onclick="nav('frames',this)">🖼️ Frames</button>
+    <button class="nb" onclick="nav('contact',this)">📞 Contact</button>
+  </div>
+  <div style="display:flex;align-items:center;gap:0.65rem;">
+    <div id="nav-user-label" style="display:none;"></div>
+    <button class="nav-cta" id="nav-new-booking" style="display:none;" onclick="openMo('booking')">+ New Booking</button>
+    <button class="btn-o btn-sm" id="nav-logout" style="display:none;font-size:0.65rem;padding:0.4rem 0.9rem;" onclick="doLogout()">Logout</button>
+  </div>
+</nav>
+
+<!-- ═══ CLIENT ACCESS MANAGER (Admin only) ═══ -->
+<div id="page-access" class="page">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.25rem;">
+    <div class="sh" style="margin:0;"><h2>Client Access Links</h2><div class="gr"><div class="gr-dot"></div></div><p>Generate secure direct links for each client</p></div>
+    <button class="btn btn-sm" onclick="openMo('newtoken')">+ Create Client Link</button>
+  </div>
+  <div class="card2" style="margin-bottom:1rem;padding:1rem 1.25rem;font-size:0.78rem;color:var(--muted);line-height:1.8;">
+    <strong style="color:var(--gold);">How it works:</strong> Each client gets a unique private URL like
+    <code style="background:rgba(255,255,255,0.05);padding:0.15rem 0.4rem;border-radius:3px;font-size:0.75rem;">/client/abc123xyz</code>.
+    When they open that link, they are automatically logged in and can see <strong style="color:var(--text);">their bookings, gallery, card, frames & contact</strong>. No password needed for clients.
+  </div>
+  <div class="card" id="token-list"><div class="loading"><div class="spin"></div>Loading…</div></div>
+</div>
+
+<!-- ═══ DASHBOARD ═══ -->
+<div id="page-dashboard" class="page active">
+  <div style="text-align:center;padding:2.5rem 1rem 1.5rem;">
+    <div style="font-size:1.75rem;margin-bottom:0.5rem;">👑</div>
+    <div style="font-family:var(--font-d);font-size:0.68rem;letter-spacing:0.4em;color:var(--gold);margin-bottom:0.75rem;text-transform:uppercase;">VIP VisualEye's Photography</div>
+    <h1 style="font-family:var(--font-d);font-size:clamp(1.6rem,4vw,3rem);font-weight:900;letter-spacing:0.07em;">
+      <span style="background:linear-gradient(135deg,#C9A84C,#F5E090);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Lokesh</span>
+      &amp;
+      <span style="background:linear-gradient(135deg,#999,#E8E8E8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Ajay</span>
+    </h1>
+    <p style="font-size:0.88rem;color:var(--muted);margin-top:0.5rem;">Ocheri, Ranipet · 97155 54025 / 9894283672</p>
+  </div>
+
+  <div class="stats" id="dash-stats">
+    <div class="stat"><div class="stat-n" id="ds-bookings">—</div><div class="stat-l">Active Bookings</div></div>
+    <div class="stat"><div class="stat-n" id="ds-revenue">—</div><div class="stat-l">Revenue Collected</div></div>
+    <div class="stat"><div class="stat-n" id="ds-clients">—</div><div class="stat-l">Total Clients</div></div>
+    <div class="stat"><div class="stat-n" id="ds-galleries">—</div><div class="stat-l">Live Galleries</div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div style="font-family:var(--font-d);font-size:0.82rem;letter-spacing:0.08em;color:var(--gold);margin-bottom:0.85rem;">Upcoming Sessions</div>
+      <div class="gr"><div class="gr-dot"></div></div>
+      <div id="dash-upcoming"><div class="loading"><div class="spin"></div>Loading…</div></div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:1rem;">
+        <div style="font-family:var(--font-d);font-size:0.82rem;letter-spacing:0.08em;color:var(--gold);margin-bottom:0.85rem;">Quick Actions</div>
+        <div class="gr"><div class="gr-dot"></div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.65rem;margin-top:0.75rem;">
+          <button class="qa" onclick="nav('booking',null);openMo('booking')"><span class="qa-icon">📅</span><div class="qa-t">New Booking</div><div class="qa-s">Schedule session</div></button>
+          <button class="qa" onclick="nav('clients',null);openMo('client')"><span class="qa-icon">👤</span><div class="qa-t">Add Client</div><div class="qa-s">Create profile</div></button>
+          <button class="qa" onclick="nav('gallery',null);openMo('gallery')"><span class="qa-icon">🖼️</span><div class="qa-t">New Gallery</div><div class="qa-s">Share photos</div></button>
+          <button class="qa" onclick="nav('payments',null);openMo('invoice')"><span class="qa-icon">💳</span><div class="qa-t">Send Invoice</div><div class="qa-s">Request payment</div></button>
+        </div>
+      </div>
+      <div class="alert" id="dash-alert" style="display:none;">
+        <div style="font-size:0.68rem;color:var(--gold);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.3rem;">⚠ Overdue Payments</div>
+        <div style="font-size:0.85rem;" id="dash-alert-text"></div>
+        <button onclick="nav('payments',null)" style="margin-top:0.55rem;background:none;border:1px solid rgba(201,168,76,0.3);color:var(--gold);border-radius:var(--radius);padding:0.3rem 0.8rem;font-size:0.7rem;cursor:pointer;">View Invoices →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:1.1rem;">
+    <div style="font-family:var(--font-d);font-size:0.82rem;letter-spacing:0.08em;color:var(--gold);margin-bottom:1rem;">December 2024</div>
+    <div class="gr" style="margin-bottom:1rem;"><div class="gr-dot"></div></div>
+    <div id="mini-cal"></div>
+  </div>
+</div>
+
+<!-- ═══ BOOKING ═══ -->
+<div id="page-booking" class="page">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.25rem;">
+    <div class="sh" style="margin:0;"><h2>Booking Management</h2><div class="gr"><div class="gr-dot"></div></div><p>All photography & videography sessions</p></div>
+    <button class="btn btn-sm" onclick="openMo('booking')">+ New Booking</button>
+  </div>
+  <div style="display:flex;gap:0.65rem;margin-bottom:1.1rem;flex-wrap:wrap;">
+    <input type="text" id="bk-search" placeholder="Search client…" style="max-width:230px;" oninput="filterBookings()"/>
+    <select id="bk-status" onchange="filterBookings()" style="max-width:150px;"><option value="">All Status</option><option>Confirmed</option><option>Pending</option><option>Completed</option></select>
+  </div>
+  <div class="card">
+    <div class="tw"><table>
+      <thead><tr><th>Client</th><th>Type</th><th>Date & Time</th><th>Location</th><th>Package</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead>
+      <tbody id="booking-body"><tr><td colspan="8"><div class="loading"><div class="spin"></div>Loading…</div></td></tr></tbody>
+    </table></div>
+  </div>
+</div>
+
+<!-- ═══ GALLERY ═══ -->
+<div id="page-gallery" class="page">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.25rem;">
+    <div class="sh" style="margin:0;"><h2>Client Galleries</h2><div class="gr"><div class="gr-dot"></div></div><p>Secure photo & video delivery</p></div>
+    <button class="btn btn-sm" id="btn-create-gallery" onclick="openMo('gallery')">+ Create Gallery</button>
+  </div>
+  <div id="gallery-list"><div class="loading"><div class="spin"></div>Loading…</div></div>
+</div>
+
+<!-- ═══ PAYMENTS ═══ -->
+<div id="page-payments" class="page">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.25rem;">
+    <div class="sh" style="margin:0;"><h2>Payments & Invoices</h2><div class="gr"><div class="gr-dot"></div></div><p>vipvisualeyes14@gmail.com</p></div>
+    <button class="btn btn-sm" onclick="openMo('invoice')">+ New Invoice</button>
+  </div>
+  <div class="stats" id="pay-stats" style="margin:0 0 1.1rem;">
+    <div class="stat"><div class="stat-n" id="ps-collected">—</div><div class="stat-l">Collected</div></div>
+    <div class="stat"><div class="stat-n" id="ps-overdue">—</div><div class="stat-l">Overdue</div></div>
+    <div class="stat"><div class="stat-n" id="ps-pending">—</div><div class="stat-l">Pending</div></div>
+    <div class="stat"><div class="stat-n" id="ps-total">—</div><div class="stat-l">Total Pipeline</div></div>
+  </div>
+  <div class="card">
+    <div class="tw"><table>
+      <thead><tr><th>Invoice #</th><th>Client</th><th>Session</th><th>Amount</th><th>Paid</th><th>Due Date</th><th>Status</th><th>Actions</th></tr></thead>
+      <tbody id="payment-body"><tr><td colspan="8"><div class="loading"><div class="spin"></div>Loading…</div></td></tr></tbody>
+    </table></div>
+  </div>
+</div>
+
+<!-- ═══ CLIENTS ═══ -->
+<div id="page-clients" class="page">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.25rem;">
+    <div class="sh" style="margin:0;"><h2>Client Management</h2><div class="gr"><div class="gr-dot"></div></div><p>Ocheri, Ranipet & surrounding areas</p></div>
+    <button class="btn btn-sm" onclick="openMo('client')">+ Add Client</button>
+  </div>
+  <div style="margin-bottom:0.9rem;"><input type="text" id="cl-search" placeholder="Search by name, phone or email…" oninput="filterClients()"/></div>
+  <div class="card"><div id="client-list"><div class="loading"><div class="spin"></div>Loading…</div></div></div>
+</div>
+
+<!-- ═══ REMINDERS ═══ -->
+<div id="page-reminders" class="page">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.25rem;">
+    <div class="sh" style="margin:0;"><h2>Reminders & Notifications</h2><div class="gr"><div class="gr-dot"></div></div><p>Schedule & send via WhatsApp, SMS & Email</p></div>
+    <button class="btn btn-sm" onclick="openMo('reminder')">+ Add Reminder</button>
+  </div>
+
+  <!-- Stats row -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:1.25rem;">
+    <div class="stat"><div class="stat-n" id="rem-sched">—</div><div class="stat-l">Scheduled</div></div>
+    <div class="stat"><div class="stat-n" id="rem-sent" style="background:linear-gradient(135deg,var(--silver),#eee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">—</div><div class="stat-l">Sent</div></div>
+    <div class="stat"><div class="stat-n" id="rem-wa" style="background:linear-gradient(135deg,#25D366,#128C7E);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">—</div><div class="stat-l">WhatsApp</div></div>
+    <div class="stat"><div class="stat-n" id="rem-total">—</div><div class="stat-l">Total</div></div>
+  </div>
+
+  <!-- Filter tabs -->
+  <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+    <button class="tab-btn active" id="rem-tab-all" onclick="filterReminders('all',this)">All</button>
+    <button class="tab-btn" id="rem-tab-sched" onclick="filterReminders('Scheduled',this)">📅 Scheduled</button>
+    <button class="tab-btn" id="rem-tab-sent" onclick="filterReminders('Sent',this)">✓ Sent</button>
+    <button class="tab-btn" id="rem-tab-wa" onclick="filterReminders('WhatsApp',this)">📱 WhatsApp</button>
+    <button class="tab-btn" id="rem-tab-email" onclick="filterReminders('Email',this)">✉ Email</button>
+  </div>
+
+  <div id="reminder-list"><div class="loading"><div class="spin"></div>Loading…</div></div>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+<div id="page-contact" class="page">
+  <div class="sh"><h2>Contact & Inquiries</h2><div class="gr"><div class="gr-dot"></div></div><p>Manage incoming leads</p></div>
+  <div class="grid2">
+    <div>
+      <div class="card2" style="margin-bottom:1rem;">
+        <div style="font-family:var(--font-d);font-size:0.78rem;letter-spacing:0.1em;color:var(--gold);margin-bottom:1rem;">Studio Contact</div>
+        <div class="con-item"><div class="con-icon">📞</div><div><div style="font-size:0.85rem;font-weight:500;">97155 54025</div><div style="font-size:0.7rem;color:var(--muted);">Lokesh — Primary</div></div></div>
+        <div class="con-item"><div class="con-icon">📞</div><div><div style="font-size:0.85rem;font-weight:500;">9894283672</div><div style="font-size:0.7rem;color:var(--muted);">Ajay — Secondary</div></div></div>
+        <div class="con-item"><div class="con-icon">✉</div><div><div style="font-size:0.85rem;font-weight:500;">vipvisualeyes14@gmail.com</div><div style="font-size:0.7rem;color:var(--muted);">Email</div></div></div>
+        <div class="con-item"><div class="con-icon">📍</div><div><div style="font-size:0.85rem;font-weight:500;">Ocheri, Ranipet</div><div style="font-size:0.7rem;color:var(--muted);">Studio location</div></div></div>
+        <div class="con-item"><div class="con-icon">📸</div><div><div style="font-size:0.85rem;font-weight:500;">@vipvisualeyes</div><div style="font-size:0.7rem;color:var(--muted);">Instagram</div></div></div>
+      </div>
+      <div class="card">
+        <div style="font-family:var(--font-d);font-size:0.78rem;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.85rem;">Recent Inquiries</div>
+        <div id="inquiry-list"><div class="loading"><div class="spin"></div>Loading…</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-family:var(--font-d);font-size:0.78rem;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.3rem;">New Client Inquiry</div>
+      <p style="font-size:0.75rem;color:var(--muted);margin-bottom:0.9rem;">Share this form with clients or embed on your website</p>
+      <label>Full Name *</label><input type="text" id="inq-name" placeholder="Client's name"/>
+      <label>Email *</label><input type="email" id="inq-email" placeholder="client@email.com"/>
+      <label>Phone</label><input type="tel" id="inq-phone" placeholder="+91"/>
+      <label>Event Type</label>
+      <select id="inq-type"><option>Wedding Photography</option><option>Wedding Videography</option><option>Wedding Photo + Video</option><option>Portrait / Family</option><option>Corporate Event</option><option>Birthday / Celebration</option><option>Pre-Wedding Shoot</option><option>Other</option></select>
+      <label>Event Date</label><input type="date" id="inq-date"/>
+      <label>Venue / Location</label><input type="text" id="inq-venue" placeholder="Ranipet, Chennai…"/>
+      <label>Message</label><textarea id="inq-msg" placeholder="Tell us about your event…"></textarea>
+      <button class="btn" style="width:100%;margin-top:1.1rem;" onclick="submitInquiry()">Send Inquiry</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MY CARD ═══ -->
+<div id="page-card" class="page">
+  <div class="sh"><h2>Digital Visiting Card</h2><div class="gr"><div class="gr-dot"></div></div><p>Hover or click to flip · Share digitally</p></div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:1.75rem;">
+    <div class="card-scene" id="cardScene" onclick="this.classList.toggle('flipped')">
+      <div class="card-3d">
+        <div class="card-face">
+          <div class="cf-front">
+            <div style="position:relative;z-index:2;text-align:center;">
+              <div style="font-size:0.9rem;margin-bottom:3px;">👑</div>
+              <div style="font-family:var(--font-d);font-size:2.4rem;font-weight:900;background:linear-gradient(160deg,#C9A84C,#F5E090,#C9A84C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:0.05em;line-height:1;">VIP</div>
+              <div style="font-size:0.5rem;letter-spacing:0.42em;color:#C0C0C0;text-transform:uppercase;margin-top:3px;">VisualEye's</div>
+              <div style="font-size:0.38rem;letter-spacing:0.55em;color:#777;text-transform:uppercase;margin-top:2px;">Photography</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-face card-back">
+          <div class="cf-back">
+            <div style="position:relative;z-index:2;">
+              <div style="font-family:var(--font-d);font-size:1rem;font-weight:700;color:#fff;line-height:1.35;" id="card-names-display">Lokesh<br/>Ajay</div>
+              <div style="font-size:0.55rem;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin:0.45rem 0 0.6rem;" id="card-title-display">Photographers</div>
+              <div style="font-size:0.58rem;color:#ddd;line-height:1.9;" id="card-details-display">
+                📞 97155 54025 / 9894283672<br/>
+                ✉ vipvisualeyes14@gmail.com<br/>
+                📍 Ocheri, Ranipet<br/>
+                📸 @vipvisualeyes
+              </div>
+            </div>
+            <div style="position:absolute;bottom:10px;right:12px;z-index:2;text-align:right;">
+              <div style="font-family:var(--font-d);font-size:0.6rem;background:linear-gradient(135deg,#C9A84C,#F5E090);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">VIP VisualEye's</div>
+              <div style="font-size:0.3rem;letter-spacing:0.3em;color:#666;text-transform:uppercase;">Photography</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:0.72rem;color:var(--muted);letter-spacing:0.06em;">Click to flip · Hover to preview back</p>
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;">
+      <button class="btn-o btn-sm" onclick="shareCardWA()">📱 Share on WhatsApp</button>
+      <button class="btn-o btn-sm" onclick="copyCardInfo()">📋 Copy Contact</button>
+      <button class="btn-o btn-sm" onclick="downloadCard()">⬇ Download Card</button>
+    </div>
+    <div style="max-width:460px;width:100%;">
+      <div class="card2">
+        <div style="font-family:var(--font-d);font-size:0.75rem;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.75rem;">Edit Card Details</div>
+        <div class="frow"><div><label>Name 1</label><input id="cn1" value="Lokesh"/></div><div><label>Name 2</label><input id="cn2" value="Ajay"/></div></div>
+        <label>Title</label><input id="ct" value="Photographers"/>
+        <div class="frow"><div><label>Phone 1</label><input id="cp1" value="97155 54025"/></div><div><label>Phone 2</label><input id="cp2" value="9894283672"/></div></div>
+        <label>Email</label><input id="ce" value="vipvisualeyes14@gmail.com"/>
+        <label>Location</label><input id="cl" value="Ocheri, Ranipet"/>
+        <label>Instagram</label><input id="ci" value="@vipvisualeyes"/>
+        <button class="btn" style="width:100%;margin-top:1rem;" onclick="updateCard()">Update Card</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FRAMES + PRICE LIST ═══ -->
+<div id="page-frames" class="page">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.25rem;">
+    <div class="sh" style="margin:0;"><h2>Frames & Price List</h2><div class="gr"><div class="gr-dot"></div></div><p>Branded frames · Full pricing for clients</p></div>
+    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+      <button class="btn-o btn-sm" onclick="downloadPriceList()">⬇ Download Price List</button>
+      <button class="btn-o btn-sm" onclick="sharePriceWA()">📱 Share Price List</button>
+    </div>
+  </div>
+  <div class="tab-btns">
+    <button class="tab-btn active" onclick="showTab('tab-fr','tab-pl',this)">🖼️ Photo Frames</button>
+    <button class="tab-btn" onclick="showTab('tab-pl','tab-fr',this)">💰 Price List</button>
+  </div>
+
+  <!-- FRAMES TAB -->
+  <div id="tab-fr">
+    <div class="grid2">
+      <div>
+        <div class="upload-zone" onclick="document.getElementById('ph-up').click()">
+          <input type="file" id="ph-up" accept="image/*" style="display:none;" onchange="loadPhoto(event)"/>
+          <div style="font-size:2rem;margin-bottom:0.65rem;">🖼️</div>
+          <div style="font-family:var(--font-d);font-size:0.78rem;letter-spacing:0.1em;color:var(--gold);">Upload Client Photo</div>
+          <div style="font-size:0.72rem;color:var(--muted);margin-top:0.35rem;">JPG, PNG — any size</div>
+        </div>
+        <div id="canvas-area" style="margin-top:1rem;display:none;">
+          <canvas id="fr-canvas" width="800" height="800" style="width:100%;border-radius:var(--radius);border:1px solid var(--border2);display:block;"></canvas>
+          <div style="margin-top:0.65rem;padding:0.7rem;background:rgba(201,168,76,0.05);border:1px solid var(--border);border-radius:var(--radius-lg);">
+            <span style="font-size:0.72rem;color:var(--muted);">Selected: </span>
+            <span style="font-family:var(--font-d);font-size:0.72rem;color:var(--gold);" id="sel-fr-name">Royal Gold</span>
+            <span style="font-size:0.72rem;color:var(--muted);"> · Digital </span>
+            <span style="font-family:var(--font-d);font-size:0.72rem;color:var(--gold2);" id="sel-fr-price">₹500</span>
+          </div>
+          <label>Frame Opacity</label>
+          <input type="range" min="50" max="100" value="100" id="fr-opacity" oninput="applyFrame()"/>
+          <div style="display:flex;gap:0.65rem;margin-top:0.75rem;flex-wrap:wrap;">
+            <button class="btn" style="flex:1;" onclick="downloadFramed()">⬇ Download</button>
+            <button class="btn-o" style="flex:1;" onclick="showToast('Download first, then send via WhatsApp')">📱 Share</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-d);font-size:0.75rem;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.85rem;">Choose Frame Style</div>
+        <div class="fr-grid" id="fr-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICE LIST TAB -->
+  <div id="tab-pl" style="display:none;">
+    <div style="background:linear-gradient(135deg,rgba(201,168,76,0.07),rgba(201,168,76,0.02));border:1px solid var(--border2);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.25rem;text-align:center;">
+      <div style="font-size:1.2rem;margin-bottom:0.4rem;">👑</div>
+      <div style="font-family:var(--font-d);font-size:1.1rem;letter-spacing:0.1em;color:var(--gold);">VIP VisualEye's Photography</div>
+      <div style="font-size:0.72rem;color:var(--muted);margin-top:0.3rem;">Ocheri, Ranipet · 97155 54025 / 9894283672</div>
+      <div style="font-size:0.7rem;color:var(--muted);">vipvisualeyes14@gmail.com · @vipvisualeyes</div>
+    </div>
+
+    <div style="font-family:var(--font-d);font-size:0.68rem;letter-spacing:0.18em;color:var(--gold);margin:0 0 0.85rem;display:flex;align-items:center;gap:0.6rem;">📸 Photography Packages<span style="flex:1;height:1px;background:linear-gradient(90deg,var(--border2),transparent);"></span></div>
+    <div class="pl-pkg-grid" id="pl-photo"></div>
+
+    <div style="font-family:var(--font-d);font-size:0.68rem;letter-spacing:0.18em;color:var(--gold);margin:1.25rem 0 0.85rem;display:flex;align-items:center;gap:0.6rem;">🎬 Videography Packages<span style="flex:1;height:1px;background:linear-gradient(90deg,var(--border2),transparent);"></span></div>
+    <div class="pl-pkg-grid" id="pl-video"></div>
+
+    <div style="font-family:var(--font-d);font-size:0.68rem;letter-spacing:0.18em;color:var(--gold);margin:1.25rem 0 0.85rem;display:flex;align-items:center;gap:0.6rem;">✦ Add-Ons & Extras<span style="flex:1;height:1px;background:linear-gradient(90deg,var(--border2),transparent);"></span></div>
+    <div class="card" style="margin-bottom:1.25rem;">
+      <div class="tw"><table class="pl-table">
+        <thead><tr><th>Service</th><th>Description</th><th>Price</th><th></th></tr></thead>
+        <tbody id="pl-addons"></tbody>
+      </table></div>
+    </div>
+
+    <div style="font-family:var(--font-d);font-size:0.68rem;letter-spacing:0.18em;color:var(--gold);margin:1.25rem 0 0.85rem;display:flex;align-items:center;gap:0.6rem;">🖼️ Frame Prints<span style="flex:1;height:1px;background:linear-gradient(90deg,var(--border2),transparent);"></span></div>
+    <div class="card" style="margin-bottom:1.25rem;">
+      <div class="tw"><table class="pl-table">
+        <thead><tr><th>Frame</th><th>Best For</th><th>Digital</th><th>Print</th></tr></thead>
+        <tbody id="pl-frames"></tbody>
+      </table></div>
+    </div>
+
+    <div class="card" style="margin-bottom:1.25rem;">
+      <div style="font-family:var(--font-d);font-size:0.75rem;letter-spacing:0.09em;color:var(--gold);margin-bottom:0.75rem;">Terms & Notes</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.9;">
+        ✦ 50% advance required to confirm booking<br/>
+        ✦ Remaining payment due on delivery day<br/>
+        ✦ Travel charges extra beyond 30 km from Ocheri, Ranipet<br/>
+        ✦ Edited photos delivered within 7–10 working days<br/>
+        ✦ Raw files not included unless specifically agreed<br/>
+        ✦ GST applicable as per government norms
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODALS ═══ -->
+<div id="mo-booking" class="mo">
+  <div class="mo-box">
+    <div class="mo-hd"><h3>New Booking</h3><button class="mo-x" onclick="closeMo('booking')">✕</button></div>
+    <label>Client Name *</label><input id="bk-client" placeholder="Client's full name"/>
+    <label>Session Type *</label>
+    <select id="bk-type"><option>Wedding Photography</option><option>Wedding Videography</option><option>Wedding Photo + Video</option><option>Portrait Session</option><option>Family Portrait</option><option>Corporate Event</option><option>Birthday / Celebration</option><option>Pre-Wedding Shoot</option></select>
+    <label>Package</label>
+    <div class="pkg-grid" id="pkg-sel">
+      <div class="pkg sel" onclick="selPkg(this)"><div class="pkg-n">Essential</div><div class="pkg-p">₹15,000<span>/session</span></div><ul class="pkg-f"><li>4 hrs · 200 photos</li><li>Online gallery</li></ul></div>
+      <div class="pkg" onclick="selPkg(this)"><div class="pkg-n">Premium</div><div class="pkg-p">₹30,000<span>/session</span></div><ul class="pkg-f"><li>8 hrs · 500 photos</li><li>Album included</li></ul></div>
+      <div class="pkg" onclick="selPkg(this)"><div class="pkg-n">Royal</div><div class="pkg-p">₹55,000<span>/session</span></div><ul class="pkg-f"><li>Full day + video</li><li>2 photographers</li></ul></div>
+    </div>
+    <div class="frow"><div><label>Date *</label><input type="date" id="bk-date"/></div><div><label>Time *</label><input type="time" id="bk-time" value="10:00"/></div></div>
+    <label>Venue / Location</label><input id="bk-location" placeholder="Venue name or address"/>
+    <label>Photographer</label>
+    <select id="bk-photo"><option>Lokesh</option><option>Ajay</option><option>Lokesh & Ajay</option></select>
+    <label>Notes</label><textarea id="bk-notes" placeholder="Shot list, special requests…"></textarea>
+    <button class="btn" style="width:100%;margin-top:1.1rem;" onclick="saveBooking()">Confirm Booking</button>
+  </div>
+</div>
+
+<div id="mo-client" class="mo">
+  <div class="mo-box">
+    <div class="mo-hd"><h3>Add New Client</h3><button class="mo-x" onclick="closeMo('client')">✕</button></div>
+    <div class="frow"><div><label>First Name *</label><input id="cl-first" placeholder="First"/></div><div><label>Last Name</label><input id="cl-last" placeholder="Last"/></div></div>
+    <label>Email</label><input type="email" id="cl-email" placeholder="client@email.com"/>
+    <label>Phone *</label><input type="tel" id="cl-phone" placeholder="+91 XXXXX XXXXX"/>
+    <label>City / Area</label><input id="cl-city" placeholder="Ranipet, Chennai, Vellore…"/>
+    <label>How did they find you?</label>
+    <select id="cl-source"><option>Instagram (@vipvisualeyes)</option><option>Google</option><option>Referral</option><option>Walk-in</option><option>WhatsApp</option><option>Other</option></select>
+    <label>Notes</label><textarea id="cl-notes" placeholder="Notes about this client…"></textarea>
+    <button class="btn" style="width:100%;margin-top:1.1rem;" onclick="saveClient()">Save Client</button>
+  </div>
+</div>
+
+<div id="mo-gallery" class="mo">
+  <div class="mo-box">
+    <div class="mo-hd"><h3>Create Gallery</h3><button class="mo-x" onclick="closeMo('gallery')">✕</button></div>
+    <label>Gallery Title *</label><input id="gl-title" placeholder="e.g. Priya & Arjun Wedding"/>
+    <label>Client Name</label><input id="gl-client" placeholder="Client name"/>
+    <label>Gallery Password (optional)</label><input type="password" id="gl-pass" placeholder="Leave blank for public"/>
+    <label>Download Settings</label>
+    <select id="gl-dl"><option value="yes">Full resolution download</option><option value="watermark">Download with VIP watermark</option><option value="no">View only — no download</option></select>
+    <label>Expiry Date</label><input type="date" id="gl-exp"/>
+    <label>Upload Photos</label>
+    <div id="gl-dropzone" style="border:2px dashed rgba(201,168,76,0.3);border-radius:8px;padding:1.5rem;text-align:center;cursor:pointer;background:rgba(201,168,76,0.02);transition:all 0.2s;" onclick="document.getElementById('gl-files').click()" ondragover="event.preventDefault();this.style.borderColor='var(--gold)'" ondragleave="this.style.borderColor='rgba(201,168,76,0.3)'" ondrop="handleGalleryDrop(event)">
+      <div style="font-size:1.8rem;margin-bottom:0.4rem;">📁</div>
+      <div style="font-family:var(--font-d);font-size:0.75rem;color:var(--gold);letter-spacing:0.08em;">Click or drag photos here</div>
+      <div style="font-size:0.7rem;color:var(--muted);margin-top:0.3rem;">JPG, PNG, WEBP — multiple files supported</div>
+      <input type="file" id="gl-files" multiple accept="image/*" style="display:none;" onchange="previewGalleryFiles(this.files)"/>
+    </div>
+    <div id="gl-preview" style="display:none;margin-top:0.75rem;">
+      <div style="font-size:0.72rem;color:var(--gold);margin-bottom:0.45rem;" id="gl-file-count">0 photos selected</div>
+      <div id="gl-thumbs" style="display:flex;gap:6px;flex-wrap:wrap;"></div>
+    </div>
+    <div id="gl-upload-progress" style="display:none;margin-top:0.75rem;">
+      <div style="font-size:0.72rem;color:var(--muted);margin-bottom:0.35rem;" id="gl-progress-text">Uploading…</div>
+      <div style="height:4px;background:var(--border);border-radius:2px;"><div id="gl-progress-bar" style="height:100%;border-radius:2px;background:linear-gradient(90deg,var(--gold),var(--gold3));width:0%;transition:width 0.3s;"></div></div>
+    </div>
+    <button class="btn" style="width:100%;margin-top:1.1rem;" onclick="saveGallery()">Create Gallery & Upload</button>
+  </div>
+</div>
+
+<div id="mo-invoice" class="mo">
+  <div class="mo-box">
+    <div class="mo-hd"><h3>New Invoice</h3><button class="mo-x" onclick="closeMo('invoice')">✕</button></div>
+    <label>Client *</label><input id="inv-client" placeholder="Client name"/>
+    <label>Session Description *</label><input id="inv-session" placeholder="e.g. Wedding Photography — Royal Package"/>
+    <div class="frow"><div><label>Total Amount (₹) *</label><input type="number" id="inv-amount" placeholder="55000"/></div><div><label>Deposit (₹)</label><input type="number" id="inv-deposit" placeholder="15000"/></div></div>
+    <label>Due Date</label><input type="date" id="inv-due"/>
+    <label>Payment Method</label>
+    <div class="meth-row">
+      <div class="meth sel" onclick="selPayMethod(this)">UPI / GPay</div>
+      <div class="meth" onclick="selPayMethod(this)">Bank Transfer</div>
+      <div class="meth" onclick="selPayMethod(this)">Cash</div>
+      <div class="meth" onclick="selPayMethod(this)">Razorpay</div>
+    </div>
+    <label>Notes</label><textarea id="inv-notes" placeholder="Payment terms, bank details…"></textarea>
+    <button class="btn" style="width:100%;margin-top:1.1rem;" onclick="saveInvoice()">Send Invoice</button>
+  </div>
+</div>
+
+<div id="mo-reminder" class="mo">
+  <div class="mo-box" style="max-width:540px;">
+    <div class="mo-hd"><h3>Schedule Reminder</h3><button class="mo-x" onclick="closeMo('reminder')">✕</button></div>
+
+    <label>Reminder Type</label>
+    <select id="rem-type" onchange="autoFillRemMsg()" style="margin-bottom:0.5rem;">
+      <option>Session Reminder (1 day before)</option>
+      <option>Session Reminder (1 week before)</option>
+      <option>Payment Due Reminder</option>
+      <option>Gallery Ready Notification</option>
+      <option>Follow-up After Delivery</option>
+      <option>Custom Message</option>
+    </select>
+
+    <div class="frow">
+      <div>
+        <label>Client Name *</label>
+        <input id="rem-client" placeholder="Client name" oninput="autoFillRemMsg()"/>
+      </div>
+      <div>
+        <label>Phone (for WhatsApp)</label>
+        <input id="rem-phone" placeholder="91XXXXXXXXXX" type="tel"/>
+      </div>
+    </div>
+
+    <label>Send Date & Time *</label>
+    <input type="datetime-local" id="rem-dt"/>
+
+    <label>Channel</label>
+    <div class="meth-row" id="rem-channel-row">
+      <div class="meth sel" onclick="selRemChannel(this)">📱 WhatsApp</div>
+      <div class="meth" onclick="selRemChannel(this)">✉ Email</div>
+      <div class="meth" onclick="selRemChannel(this)">💬 SMS</div>
+    </div>
+
+    <label>Message *</label>
+    <textarea id="rem-msg" rows="5" placeholder="Message will auto-fill when you select a type…" oninput="updateWAPreview()"></textarea>
+
+    <!-- WhatsApp preview -->
+    <div id="wa-preview-box" style="margin-top:0.85rem;background:#0b141a;border-radius:var(--radius-lg);padding:1rem;display:none;">
+      <div style="font-size:0.65rem;color:#667781;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.5rem;">WhatsApp Preview</div>
+      <div style="background:#202c33;border-radius:8px 8px 8px 0;padding:0.75rem 1rem;max-width:85%;position:relative;">
+        <div id="wa-preview-text" style="font-size:0.82rem;color:#e9edef;line-height:1.5;white-space:pre-wrap;word-break:break-word;"></div>
+        <div style="font-size:0.65rem;color:#667781;text-align:right;margin-top:4px;">12:00 PM ✓✓</div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:0.65rem;margin-top:1.25rem;flex-wrap:wrap;">
+      <button class="btn" style="flex:2;min-width:140px;" onclick="saveReminder()">💾 Schedule</button>
+      <button class="btn-o" style="flex:1;min-width:100px;" onclick="sendNowWA()" id="send-now-btn">📱 Send Now</button>
+    </div>
+  </div>
+</div>
+
+<div id="mo-newtoken" class="mo">
+  <div class="mo-box">
+    <div class="mo-hd"><h3>Create Client Access Link</h3><button class="mo-x" onclick="closeMo('newtoken')">✕</button></div>
+    <div style="font-size:0.78rem;color:var(--muted);margin-bottom:1rem;">The client will get a private URL they can open directly — no password needed.</div>
+    <label>Client Name *</label><input id="tok-name" placeholder="e.g. Priya &amp; Arjun"/>
+    <label>Email (optional)</label><input type="email" id="tok-email" placeholder="client@email.com"/>
+    <label>Gallery IDs to share (comma-separated)</label>
+    <input id="tok-gids" placeholder="e.g. 1,2,3 — leave blank to auto-match by name"/>
+    <div style="margin-top:0.85rem;padding:0.75rem;background:rgba(201,168,76,0.04);border:1px solid var(--border);border-radius:var(--radius);font-size:0.72rem;color:var(--muted);">
+      💡 After creating, copy the link and send it to the client via WhatsApp or email.
+    </div>
+    <div id="tok-result" style="display:none;margin-top:0.85rem;padding:0.75rem;background:rgba(78,203,127,0.07);border:1px solid rgba(78,203,127,0.2);border-radius:var(--radius);">
+      <div style="font-size:0.68rem;color:var(--green);font-weight:600;margin-bottom:0.4rem;">✓ Link created!</div>
+      <div id="tok-result-link" style="font-family:monospace;font-size:0.75rem;color:var(--text);word-break:break-all;"></div>
+      <button class="btn-icon" style="margin-top:0.5rem;color:var(--gold);" onclick="copyTokLink()">📋 Copy Link</button>
+      <button class="btn-icon" style="margin-top:0.5rem;color:#25D366;" onclick="shareTokWA()">📱 WhatsApp</button>
+    </div>
+    <button class="btn" style="width:100%;margin-top:1.1rem;" onclick="createClientToken()">Generate Link</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ── API BASE ─────────────────────────────────────
+const API = '';  // same origin (Flask)
+
+// ── APP STATE ────────────────────────────────────
+let APP_ROLE = 'guest';   // 'admin' | 'customer' | 'guest'
+let APP_USER = '';        // customer name if applicable
+
+async function api(path, opts={}) {
+  try {
+    const r = await fetch(API + path, {
+      headers: {'Content-Type':'application/json'},
+      ...opts
+    });
+    return await r.json();
+  } catch(e) {
+    console.warn('API unavailable:', e.message);
+    return null;
+  }
+}
+
+// ── AUTH INIT ─────────────────────────────────────
+async function initAuth() {
+  // Flask sets the mode via Jinja template variable
+  const mode = document.body.dataset.mode || 'login';
+
+  if (mode === 'admin') {
+    setRole('admin');
+  } else if (mode === 'customer') {
+    // Read customer name from body dataset
+    const name = document.body.dataset.customerName || 'Client';
+    setRole('customer', name);
+  } else if (mode === 'invalid_token') {
+    document.getElementById('screen-login').style.display = 'none';
+    document.getElementById('screen-invalid').style.display = 'block';
+  }
+  // else: show login screen (default)
+}
+
+function setRole(role, name='') {
+  APP_ROLE = role;
+  APP_USER = name;
+
+  // Hide auth wall
+  document.getElementById('auth-wall').classList.add('hidden');
+
+  if (role === 'admin') {
+    document.getElementById('navLinks-admin').style.display = 'flex';
+    document.getElementById('nav-new-booking').style.display = 'block';
+    document.getElementById('nav-logout').style.display = 'block';
+    document.getElementById('nav-user-label').innerHTML = `<span class="badge by" style="font-size:0.65rem;">👑 Admin</span>`;
+    document.getElementById('nav-user-label').style.display = 'block';
+    // Start on dashboard
+    nav('dashboard', document.querySelector('#navLinks-admin .nb'));
+    loadDashboard();
+  } else if (role === 'customer') {
+    document.getElementById('navLinks-customer').style.display = 'flex';
+    document.getElementById('nav-logout').style.display = 'block';
+    document.getElementById('nav-user-label').innerHTML = `<span class="cust-badge">👤 ${name}</span>`;
+    document.getElementById('nav-user-label').style.display = 'block';
+    // Start on booking for customer
+    nav('booking', document.querySelector('#navLinks-customer .nb'));
+    loadBookings();
+  }
+}
+
+async function doAdminLogin() {
+  const pw = document.getElementById('admin-pw').value;
+  const err = document.getElementById('login-err');
+  err.style.display = 'none';
+  if (!pw) { err.textContent = 'Please enter your password.'; err.style.display = 'block'; return; }
+  const res = await fetch('/api/auth/admin-login', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({password: pw})
+  });
+  const data = await res.json();
+  if (data.success) {
+    setRole('admin');
+  } else {
+    err.textContent = data.message || 'Incorrect password.';
+    err.style.display = 'block';
+    document.getElementById('admin-pw').value = '';
+  }
+}
+
+async function doLogout() {
+  await fetch('/api/auth/logout', {method:'POST'});
+  window.location.href = '/';
+}
+
+// ── NAV (role-aware) ─────────────────────────────
+function nav(id, btn) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  else {
+    document.querySelectorAll('.nb').forEach(b=>{
+      if(b.getAttribute('onclick')&&b.getAttribute('onclick').includes("'"+id+"'")) b.classList.add('active');
+    });
+  }
+  if(id==='dashboard') loadDashboard();
+  if(id==='booking') loadBookings();
+  if(id==='gallery') loadGalleries();
+  if(id==='payments') loadPayments();
+  if(id==='clients') loadClients();
+  if(id==='reminders') loadReminders();
+  if(id==='contact') loadInquiries();
+  if(id==='access') loadTokens();
+}
+
+// ── CLIENT TOKENS (admin) ────────────────────────
+let _newTokLink = '';
+async function loadTokens(){
+  const data = await api('/api/customer-tokens');
+  if(!data){ document.getElementById('token-list').innerHTML='<div class="empty">Could not load tokens.</div>'; return; }
+  if(!data.length){
+    document.getElementById('token-list').innerHTML='<div class="empty">No client links yet. Click "+ Create Client Link" to generate one.</div>';
+    return;
+  }
+  document.getElementById('token-list').innerHTML = data.map(t=>`
+    <div class="link-row">
+      <div style="flex-shrink:0;">
+        <div style="font-weight:500;font-size:0.87rem;">${t.client_name}</div>
+        <div style="font-size:0.7rem;color:var(--muted);">${t.email||'No email'} · Created ${(t.created_at||'').split('T')[0]}</div>
+      </div>
+      <div class="link-chip">${window.location.origin}${t.link}</div>
+      <span class="badge ${t.active?'bg':'br'}">${t.active?'Active':'Disabled'}</span>
+      <button class="btn-icon" style="color:var(--gold);" onclick="copyLink('${window.location.origin}${t.link}')">📋</button>
+      <button class="btn-icon" style="color:#25D366;" onclick="shareLinkWA('${t.client_name}','${window.location.origin}${t.link}')">📱</button>
+      <button class="btn-icon" onclick="toggleToken(${t.id})">${t.active?'🔒 Disable':'🔓 Enable'}</button>
+      <button class="btn-danger" onclick="deleteToken(${t.id})">✕</button>
+    </div>`).join('');
+}
+
+async function createClientToken(){
+  const name = document.getElementById('tok-name').value.trim();
+  if(!name){ toast('Please enter client name'); return; }
+  const body = {
+    client_name: name,
+    email: document.getElementById('tok-email').value,
+    gallery_ids: document.getElementById('tok-gids').value
+  };
+  const data = await api('/api/customer-tokens', {method:'POST', body:JSON.stringify(body)});
+  if(!data || !data.link){ toast('⚠ Could not create token'); return; }
+  _newTokLink = window.location.origin + data.link;
+  document.getElementById('tok-result').style.display='block';
+  document.getElementById('tok-result-link').textContent = _newTokLink;
+  loadTokens();
+  toast('✓ Client link created!');
+}
+
+function copyTokLink(){ navigator.clipboard.writeText(_newTokLink).then(()=>toast('✓ Link copied!')); }
+function copyLink(url){ navigator.clipboard.writeText(url).then(()=>toast('✓ Link copied!')); }
+function shareTokWA(){
+  const name = document.getElementById('tok-name').value.trim() || 'Client';
+  const msg = encodeURIComponent(`Hi ${name}! 🎉\n\nYour private gallery from VIP VisualEye's Photography is ready!\n\n🔗 Access your photos here:\n${_newTokLink}\n\nThis link is just for you — click to view your booking, photos, and more.\n\n— Lokesh & Ajay\n📸 @vipvisualeyes`);
+  window.open(`https://wa.me/?text=${msg}`, '_blank');
+}
+function shareLinkWA(name, url){
+  const msg = encodeURIComponent(`Hi ${name}! 🎉\n\nHere is your private link from VIP VisualEye's Photography:\n${url}\n\n— Lokesh & Ajay 📸`);
+  window.open(`https://wa.me/?text=${msg}`, '_blank');
+}
+async function toggleToken(id){
+  await api(`/api/customer-tokens/${id}/toggle`, {method:'PUT'});
+  loadTokens();
+}
+async function deleteToken(id){
+  if(!confirm('Revoke this client link?')) return;
+  await api(`/api/customer-tokens/${id}`, {method:'DELETE'});
+  loadTokens();
+  toast('Link revoked');
+}
+
+// ── DEMO DATA (fallback when Flask not running) ──
+const DEMO = {
+  bookings: [
+    {id:1,client:'Priya & Arjun',type:'Wedding Photography',date:'2024-12-14',time:'10:00',location:'Besant Nagar Beach',package:'Royal',photographer:'Lokesh & Ajay',amount:55000,status:'Confirmed'},
+    {id:2,client:'Meena Krishnan',type:'Family Portrait',date:'2024-12-17',time:'16:00',location:'Studio, Ocheri',package:'Essential',photographer:'Lokesh',amount:15000,status:'Confirmed'},
+    {id:3,client:'Tech Corp',type:'Corporate Event',date:'2024-12-20',time:'09:00',location:'Ranipet SIPCOT',package:'Premium',photographer:'Ajay',amount:30000,status:'Pending'},
+    {id:4,client:'Rahul Sharma',type:'Birthday Videography',date:'2024-12-22',time:'18:00',location:'Home',package:'Essential',photographer:'Lokesh',amount:15000,status:'Confirmed'},
+    {id:5,client:'Ananya & Dev',type:'Pre-Wedding Shoot',date:'2025-01-05',time:'07:00',location:'Marina Beach',package:'Premium',photographer:'Lokesh & Ajay',amount:30000,status:'Pending'},
+  ],
+  clients: [
+    {id:1,first:'Priya',last:'& Arjun Mehta',email:'priya@email.com',phone:'98400 11111',city:'Chennai',source:'Instagram',booking_count:2,total_spent:85000},
+    {id:2,first:'Meena',last:'Krishnan',email:'meena.k@gmail.com',phone:'94440 22222',city:'Ranipet',source:'Referral',booking_count:1,total_spent:15000},
+    {id:3,first:'Tech Corp',last:'Ltd',email:'hr@techcorp.in',phone:'044 2222 3333',city:'Ranipet',source:'Google',booking_count:3,total_spent:90000},
+    {id:4,first:'Rahul',last:'Sharma',email:'rahul@email.com',phone:'99400 44444',city:'Vellore',source:'Instagram',booking_count:1,total_spent:15000},
+  ],
+  payments: [
+    {id:1,client:'Priya & Arjun',session:'Wedding Photography — Royal',amount:55000,paid:27500,due_date:'2024-12-01',status:'Partial'},
+    {id:2,client:'Meena Krishnan',session:'Family Portrait — Essential',amount:15000,paid:0,due_date:'2024-12-10',status:'Overdue'},
+    {id:3,client:'Tech Corp',session:'Corporate Event — Premium',amount:30000,paid:30000,due_date:'2024-12-05',status:'Paid'},
+    {id:4,client:'Rahul Sharma',session:'Birthday Video — Essential',amount:15000,paid:7500,due_date:'2024-12-20',status:'Partial'},
+  ],
+  galleries: [
+    {id:1,title:'Priya & Arjun Wedding',client:'Priya & Arjun',photos:342,download_type:'yes',status:'Live',downloads:89,created_at:'2024-11-30'},
+    {id:2,title:'Meena Family Portraits',client:'Meena Krishnan',photos:54,download_type:'yes',status:'Live',downloads:12,created_at:'2024-12-01'},
+    {id:3,title:'TechCorp Annual Day',client:'Tech Corp Ltd',photos:187,download_type:'watermark',status:'Live',downloads:143,created_at:'2024-11-15'},
+  ],
+  reminders: [
+    {id:1,type:'Session Reminder',client:'Priya & Arjun',datetime:'2024-12-13 09:00',channel:'WhatsApp',message:"Hi Priya! Your wedding session is tomorrow at 10:00 AM. — Lokesh, VIP VisualEye's 📸",status:'Scheduled'},
+    {id:2,type:'Payment Reminder',client:'Meena Krishnan',datetime:'2024-12-12 10:00',channel:'WhatsApp',message:"Hi Meena! Invoice of ₹15,000 is overdue. Please complete payment. — Ajay, VIP VisualEye's",status:'Sent'},
+    {id:3,type:'Gallery Ready',client:'Priya & Arjun',datetime:'2024-12-01 14:00',channel:'Email',message:"Your wedding gallery of 342 photos is ready at your private link. — VIP VisualEye's",status:'Sent'},
+  ],
+  inquiries: [
+    {id:1,name:'Kavya Nair',email:'kavya@email.com',event_type:'Wedding',created_at:'2024-12-10',status:'New'},
+    {id:2,name:'Kiran & Swati',email:'kiran@email.com',event_type:'Pre-Wedding',created_at:'2024-12-09',status:'Replied'},
+    {id:3,name:'Ravi Kumar',email:'ravi@email.com',event_type:'Corporate Event',created_at:'2024-12-08',status:'Converted'},
+  ]
+};
+
+let ALL = { bookings:[...DEMO.bookings], clients:[...DEMO.clients], payments:[...DEMO.payments], galleries:[...DEMO.galleries], reminders:[...DEMO.reminders], inquiries:[...DEMO.inquiries] };
+
+// ── MODALS ───────────────────────────────────────
+function openMo(id){ document.getElementById('mo-'+id).classList.add('open'); }
+function closeMo(id){ document.getElementById('mo-'+id).classList.remove('open'); }
+document.querySelectorAll('.mo').forEach(m=>m.addEventListener('click',e=>{ if(e.target===m) m.classList.remove('open'); }));
+
+// ── HELPERS ──────────────────────────────────────
+function toast(msg){ const t=document.getElementById('toast'); t.textContent='✦ '+msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),3200); }
+function fmtDate(d){ if(!d||d==='TBD') return 'TBD'; try{ return new Date(d+'T00:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}); }catch(e){return d;} }
+function fmtAmt(n){ return '₹'+(n||0).toLocaleString('en-IN'); }
+function statusBadge(s){ const m={Confirmed:'bg',Paid:'bg',Live:'bg',Sent:'bg',Converted:'bg',Pending:'by',Partial:'by',Scheduled:'by',Overdue:'br',New:'br',Failed:'br',Completed:'bs'}; return `<span class="badge ${m[s]||'bm'}">${s}</span>`; }
+function selPkg(el){ document.querySelectorAll('#pkg-sel .pkg').forEach(c=>c.classList.remove('sel')); el.classList.add('sel'); }
+function selMeth(el){ el.parentElement.querySelectorAll('.meth').forEach(b=>b.classList.remove('sel')); el.classList.add('sel'); }
+
+// ── GALLERY FILE PREVIEW ─────────────────────────
+function previewGalleryFiles(files){
+  if(!files||!files.length) return;
+  const preview = document.getElementById('gl-preview');
+  const thumbs = document.getElementById('gl-thumbs');
+  const count = document.getElementById('gl-file-count');
+  preview.style.display = 'block';
+  count.textContent = `${files.length} photo${files.length>1?'s':''} selected`;
+  thumbs.innerHTML = '';
+  const show = Math.min(files.length, 8);
+  for(let i=0;i<show;i++){
+    const reader = new FileReader();
+    const div = document.createElement('div');
+    div.style.cssText='width:52px;height:52px;border-radius:4px;overflow:hidden;border:1px solid rgba(201,168,76,0.25);flex-shrink:0;';
+    const img = document.createElement('img');
+    img.style.cssText='width:100%;height:100%;object-fit:cover;';
+    reader.onload = e => img.src = e.target.result;
+    reader.readAsDataURL(files[i]);
+    div.appendChild(img);
+    thumbs.appendChild(div);
+  }
+  if(files.length>8){
+    const more = document.createElement('div');
+    more.style.cssText='width:52px;height:52px;border-radius:4px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:var(--gold);text-align:center;flex-shrink:0;';
+    more.textContent=`+${files.length-8} more`;
+    thumbs.appendChild(more);
+  }
+  // Update dropzone label
+  document.getElementById('gl-dropzone').style.borderColor='var(--gold)';
+}
+
+function handleGalleryDrop(e){
+  e.preventDefault();
+  document.getElementById('gl-dropzone').style.borderColor='rgba(201,168,76,0.3)';
+  const files = e.dataTransfer.files;
+  if(!files.length) return;
+  // Assign dropped files to the input
+  const dt = new DataTransfer();
+  for(let f of files) dt.items.add(f);
+  document.getElementById('gl-files').files = dt.files;
+  previewGalleryFiles(files);
+}
+
+// ── PAYMENT METHOD TRACKER ───────────────────────
+let _payMethod = 'UPI / GPay';
+function selPayMethod(el){
+  el.parentElement.querySelectorAll('.meth').forEach(b=>b.classList.remove('sel'));
+  el.classList.add('sel');
+  _payMethod = el.textContent.trim();
+}
+function showTab(show, hide, btn){
+  document.getElementById(show).style.display='block';
+  document.getElementById(hide).style.display='none';
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+}
+
+// ── DASHBOARD ────────────────────────────────────
+async function loadDashboard(){
+  const data = await api('/api/dashboard') || buildDemoDash();
+  document.getElementById('ds-bookings').textContent = data.bookings_count;
+  document.getElementById('ds-revenue').textContent = fmtAmt(data.revenue);
+  document.getElementById('ds-clients').textContent = data.clients_count;
+  document.getElementById('ds-galleries').textContent = data.galleries_count;
+  if(data.overdue_count > 0){
+    document.getElementById('dash-alert').style.display='block';
+    document.getElementById('dash-alert-text').innerHTML = `<strong>${data.overdue_count}</strong> invoice${data.overdue_count>1?'s':''} totalling <strong style="color:var(--gold)">${fmtAmt(data.overdue_sum)}</strong> overdue`;
+  }
+  const up = data.upcoming || ALL.bookings.slice(0,4);
+  const emojis = {Wedding:'💍',Portrait:'👨‍👩‍👧',Corporate:'🏢',Birthday:'🎂',Videography:'🎬'};
+  document.getElementById('dash-upcoming').innerHTML = up.length ? up.map(b=>`
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0.8rem 0;border-bottom:1px solid var(--border);">
+      <div>
+        <div style="font-weight:500;font-size:0.88rem;">${b.client}</div>
+        <div style="font-size:0.73rem;color:var(--muted);margin-top:2px;">${fmtDate(b.date)} · ${b.time||''} · ${b.location||'—'}</div>
+      </div>
+      <span style="font-size:0.7rem;color:var(--muted);">${fmtDate(b.date)}</span>
+    </div>`).join('')+'<div style="border-bottom:none !important;"></div>' : '<div class="empty">No upcoming sessions</div>';
+  buildMiniCal();
+}
+
+function buildDemoDash(){
+  return {
+    bookings_count: ALL.bookings.filter(b=>b.status!=='Completed').length,
+    revenue: ALL.payments.reduce((s,p)=>s+(p.paid||0),0),
+    clients_count: ALL.clients.length,
+    galleries_count: ALL.galleries.filter(g=>g.status==='Live').length,
+    overdue_count: ALL.payments.filter(p=>p.status==='Overdue').length,
+    overdue_sum: ALL.payments.filter(p=>p.status==='Overdue').reduce((s,p)=>s+(p.amount-p.paid),0),
+    upcoming: ALL.bookings.slice(0,4)
+  };
+}
+
+function buildMiniCal(){
+  const days=['Su','Mo','Tu','We','Th','Fr','Sa'];
+  const evDays=[14,17,20,22];
+  let h='<div class="cal-grid">';
+  days.forEach(d=>h+=`<div class="cal-dn">${d}</div>`);
+  for(let i=1;i<=31;i++) h+=`<div class="cal-d${i===13?' today':''}${evDays.includes(i)?' has-ev':''}" onclick="this.parentElement.querySelectorAll('.cal-d').forEach(x=>x.classList.remove('picked'));this.classList.add('picked')">${i}</div>`;
+  h+='</div>';
+  document.getElementById('mini-cal').innerHTML=h;
+}
+
+// ── BOOKINGS ─────────────────────────────────────
+async function loadBookings(){
+  const data = await api('/api/bookings');
+  if(data) ALL.bookings = data;
+  renderBookings(ALL.bookings);
+}
+
+function renderBookings(list){
+  const isAdmin = APP_ROLE === 'admin';
+  if(!list.length){ document.getElementById('booking-body').innerHTML=`<tr><td colspan="8"><div class="empty">${isAdmin ? 'No bookings yet. Click + New Booking to add one.' : 'No bookings found for your account.'}</div></td></tr>`; return; }
+  document.getElementById('booking-body').innerHTML = list.map(b=>`
+    <tr>
+      <td><strong>${b.client}</strong><div style="font-size:0.7rem;color:var(--muted);margin-top:1px;">${b.photographer||''}</div></td>
+      <td style="color:var(--muted);font-size:0.78rem;max-width:140px;">${b.type}</td>
+      <td style="font-size:0.8rem;white-space:nowrap;">${fmtDate(b.date)}<div style="font-size:0.7rem;color:var(--muted);">${b.time||''}</div></td>
+      <td style="font-size:0.78rem;color:var(--muted);max-width:120px;">${b.location||'—'}</td>
+      <td><span class="badge bm">${b.package||'—'}</span></td>
+      <td style="font-weight:600;color:var(--gold);white-space:nowrap;">${fmtAmt(b.amount)}</td>
+      <td>${statusBadge(b.status)}</td>
+      <td style="white-space:nowrap;">
+        ${isAdmin ? `
+        <select onchange="updateBookingStatus(${b.id},this.value)" style="background:var(--card2);border:1px solid var(--border);color:var(--text);border-radius:var(--radius);padding:0.25rem 0.4rem;font-size:0.68rem;width:auto;cursor:pointer;">
+          <option ${b.status==='Pending'?'selected':''}>Pending</option>
+          <option ${b.status==='Confirmed'?'selected':''}>Confirmed</option>
+          <option ${b.status==='Completed'?'selected':''}>Completed</option>
+        </select>
+        <button class="btn-danger" style="margin-left:4px;" onclick="deleteBooking(${b.id})">✕</button>` : '—'}
+      </td>
+    </tr>`).join('');
+}
+
+function filterBookings(){
+  const q = document.getElementById('bk-search').value.toLowerCase();
+  const s = document.getElementById('bk-status').value;
+  renderBookings(ALL.bookings.filter(b=>(!q||(b.client||'').toLowerCase().includes(q))&&(!s||b.status===s)));
+}
+
+async function saveBooking(){
+  const client = document.getElementById('bk-client').value.trim();
+  if(!client){ toast('Please enter a client name'); return; }
+  const pkg = document.querySelector('#pkg-sel .pkg.sel .pkg-n')?.textContent||'Essential';
+  const prices = {Essential:15000,Premium:30000,Royal:55000};
+  const body = {
+    client, type:document.getElementById('bk-type').value,
+    date:document.getElementById('bk-date').value,
+    time:document.getElementById('bk-time').value,
+    location:document.getElementById('bk-location').value,
+    package:pkg, photographer:document.getElementById('bk-photo').value,
+    amount:prices[pkg]||15000, notes:document.getElementById('bk-notes').value
+  };
+  const res = await api('/api/bookings',{method:'POST',body:JSON.stringify(body)});
+  const newB = {id:Date.now(),...body,status:'Pending'};
+  ALL.bookings.unshift(newB);
+  renderBookings(ALL.bookings);
+  closeMo('booking');
+  document.getElementById('bk-client').value='';
+  toast(res?.message||'Booking confirmed!');
+}
+
+async function updateBookingStatus(id,status){
+  await api(`/api/bookings/${id}`,{method:'PUT',body:JSON.stringify({status})});
+  const b = ALL.bookings.find(x=>x.id===id);
+  if(b) b.status=status;
+  toast('Status updated to '+status);
+}
+
+async function deleteBooking(id){
+  if(!confirm('Delete this booking?')) return;
+  await api(`/api/bookings/${id}`,{method:'DELETE'});
+  ALL.bookings = ALL.bookings.filter(b=>b.id!==id);
+  renderBookings(ALL.bookings);
+  toast('Booking deleted');
+}
+
+// ── GALLERIES ────────────────────────────────────
+async function loadGalleries(){
+  const btn = document.getElementById('btn-create-gallery');
+  if(btn) btn.style.display = APP_ROLE === 'admin' ? '' : 'none';
+  const data = await api('/api/galleries');
+  if(data) ALL.galleries = data;
+  renderGalleries(ALL.galleries);
+}
+
+function renderGalleries(list){
+  const emojis=['🌸','🌿','✨','🎊','💫','🌊','🌅','🎭'];
+  const isAdmin = APP_ROLE === 'admin';
+  if(!list.length){
+    document.getElementById('gallery-list').innerHTML=`<div class="empty">${isAdmin ? 'No galleries yet. Click + Create Gallery to add one.' : 'No photos have been shared with you yet.'}</div>`;
+    return;
+  }
+  document.getElementById('gallery-list').innerHTML = list.map((g,gi)=>{
+    const photoList = g.photo_list || [];
+    const photoCount = Math.max(g.photos||0, photoList.length);
+    const dlLabel = g.download_type==='yes' ? 'Full res' : g.download_type==='watermark' ? 'With watermark' : 'View only';
+    const pct = photoCount ? Math.min(100, Math.round((g.downloads||0)/photoCount*100)) : 0;
+
+    const showCount = Math.min(8, Math.max(photoCount, 4));
+    const thumbs = Array.from({length: showCount}, (_,i) => {
+      const photo = photoList[i];
+      if(photo){
+        const src = `/static/uploads/${photo.filename}`;
+        const canDownload = g.download_type !== 'no';
+        return `<div class="gal-item" style="background:#0d0d0d;">
+          <img src="${src}" style="width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:2rem;">${emojis[i%emojis.length]}</div>
+          <div class="gal-ov" style="flex-direction:column;gap:6px;">
+            ${canDownload
+              ? `<a href="/api/photos/${photo.id}/download" class="btn btn-sm" style="text-decoration:none;font-size:0.65rem;">⬇ Download</a>`
+              : `<span style="font-size:0.68rem;color:var(--muted);">View only</span>`}
+            ${isAdmin ? `<button class="btn-danger" style="font-size:0.65rem;padding:0.25rem 0.6rem;" onclick="deletePhoto(${photo.id},${g.id})">🗑 Delete</button>` : ''}
+          </div>
+        </div>`;
+      }
+      return `<div class="gal-item">${emojis[(gi+i)%emojis.length]}
+        <div class="gal-ov"><span style="font-size:0.7rem;color:var(--muted);">No photo</span></div>
+      </div>`;
+    }).join('');
+
+    return `
+    <div class="card" style="margin-bottom:1.1rem;" id="gal-card-${g.id}">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:0.65rem;margin-bottom:0.85rem;">
+        <div>
+          <div style="font-family:var(--font-d);font-size:0.9rem;letter-spacing:0.06em;">${g.title}</div>
+          <div style="font-size:0.73rem;color:var(--muted);margin-top:3px;">${g.client||'—'} · ${photoCount} photo${photoCount!==1?'s':''} · ${(g.created_at||'').split('T')[0]||''}</div>
+        </div>
+        <div style="display:flex;gap:0.45rem;flex-wrap:wrap;align-items:center;">
+          ${statusBadge(g.status||'Live')}
+          ${isAdmin ? `
+            <button class="btn-icon" onclick="copyGalleryLink(${g.id})">📋 Link</button>
+            <button class="btn-icon" style="color:var(--gold);border-color:rgba(201,168,76,0.3);" onclick="addPhotosToGallery(${g.id})">+ Photos</button>
+            <button class="btn-danger" onclick="deleteGallery(${g.id})">✕ Delete</button>` : ''}
+        </div>
+      </div>
+      <div style="display:flex;gap:1.5rem;font-size:0.75rem;color:var(--muted);margin-bottom:0.85rem;flex-wrap:wrap;">
+        <span>📥 ${g.downloads||0} downloads</span>
+        <span>⬇️ ${dlLabel}</span>
+        ${isAdmin ? `<span>${g.password ? '🔒 Password protected' : '🔓 Open access'}</span>` : ''}
+        ${g.expiry ? `<span>📅 Expires ${g.expiry}</span>` : ''}
+      </div>
+      ${isAdmin ? `<input type="file" id="add-photos-${g.id}" multiple accept="image/*" style="display:none;" onchange="uploadMorePhotos(${g.id},this)"/>` : ''}
+      <div class="gal-grid">${thumbs}</div>
+      ${photoCount>0?`<div class="prog" style="margin-top:0.6rem;"><div class="prog-f" style="width:${pct}%"></div></div>
+      <div style="font-size:0.68rem;color:var(--muted);margin-top:0.35rem;">${g.downloads||0} of ${photoCount} photos downloaded</div>`:''}
+    </div>`;
+  }).join('');
+}
+
+// ── add photos to existing gallery ───────────────
+function addPhotosToGallery(galleryId){
+  document.getElementById(`add-photos-${galleryId}`).click();
+}
+
+async function uploadMorePhotos(galleryId, input){
+  const files = input.files;
+  if(!files || !files.length) return;
+  const formData = new FormData();
+  for(let i=0; i<files.length; i++) formData.append('files', files[i]);
+  toast(`Uploading ${files.length} photo${files.length>1?'s':''}…`);
+  try{
+    const res = await fetch(`/api/galleries/${galleryId}/upload`, {method:'POST', body:formData});
+    const data = await res.json();
+    const count = (data.files||[]).length;
+    toast(`✓ ${count} photo${count!==1?'s':''} added to gallery!`);
+    await loadGalleries(); // reload to show new photos
+  } catch(e){
+    toast('⚠ Upload failed — is Flask running on port 5000?');
+    console.error(e);
+  }
+  input.value = '';
+}
+
+async function deletePhoto(photoId, galleryId){
+  if(!confirm('Delete this photo?')) return;
+  await api(`/api/photos/${photoId}`, {method:'DELETE'});
+  toast('Photo deleted');
+  await loadGalleries();
+}
+
+async function saveGallery(){
+  const title = document.getElementById('gl-title').value.trim();
+  if(!title){ toast('⚠ Please enter a gallery title'); return; }
+  const files = document.getElementById('gl-files').files;
+  const body = {
+    title,
+    client:        document.getElementById('gl-client').value,
+    password:      document.getElementById('gl-pass').value,
+    download_type: document.getElementById('gl-dl').value,
+    expiry:        document.getElementById('gl-exp').value
+  };
+
+  // Step 1 — create gallery record, get back the gallery_id
+  let gallery_id = null;
+  try{
+    const res = await fetch('/api/galleries', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(body)
+    });
+    const data = await res.json();
+    gallery_id = data.gallery_id;
+    if(!gallery_id) throw new Error('No gallery_id returned');
+  } catch(e){
+    toast('⚠ Could not create gallery — is Flask running?');
+    console.error(e);
+    return;
+  }
+
+  // Step 2 — upload photos to the gallery-specific endpoint
+  let uploadedCount = 0;
+  if(files && files.length > 0){
+    document.getElementById('gl-upload-progress').style.display = 'block';
+    document.getElementById('gl-progress-bar').style.width = '15%';
+    document.getElementById('gl-progress-text').textContent = `Uploading ${files.length} photo${files.length>1?'s':''}…`;
+
+    const formData = new FormData();
+    for(let i=0; i<files.length; i++) formData.append('files', files[i]);
+
+    try{
+      const upRes = await fetch(`/api/galleries/${gallery_id}/upload`, {method:'POST', body:formData});
+      const upData = await upRes.json();
+      uploadedCount = (upData.files||[]).length;
+      const errs = upData.errors||[];
+      document.getElementById('gl-progress-bar').style.width = '100%';
+      document.getElementById('gl-progress-text').textContent =
+        `✓ ${uploadedCount} photo${uploadedCount!==1?'s':''} uploaded${errs.length?' ('+errs.length+' failed)':''}`;
+    } catch(e){
+      document.getElementById('gl-progress-text').textContent = '⚠ Upload failed — check server';
+      console.error(e);
+    }
+  }
+
+  // Step 3 — reload galleries from server so photo_list is correct
+  await loadGalleries();
+
+  setTimeout(()=>{
+    closeMo('gallery');
+    document.getElementById('gl-title').value = '';
+    document.getElementById('gl-client').value = '';
+    document.getElementById('gl-pass').value = '';
+    document.getElementById('gl-files').value = '';
+    document.getElementById('gl-preview').style.display = 'none';
+    document.getElementById('gl-upload-progress').style.display = 'none';
+    document.getElementById('gl-progress-bar').style.width = '0%';
+    document.getElementById('gl-thumbs').innerHTML = '';
+    document.getElementById('gl-dropzone').style.borderColor = 'rgba(201,168,76,0.3)';
+    toast(uploadedCount > 0
+      ? `✓ Gallery created with ${uploadedCount} photos!`
+      : 'Gallery created! Click "+ Photos" to add photos.');
+  }, files && files.length > 0 ? 1000 : 0);
+}
+
+function copyGalleryLink(id){
+  const link = `${window.location.origin}/api/galleries`;
+  const text = `http://localhost:5000/api/galleries (Gallery ID: ${id})`;
+  navigator.clipboard.writeText(text)
+    .then(()=> toast('✓ Gallery link copied!'))
+    .catch(()=> toast(`Gallery ID: ${id} — share link manually`));
+}
+
+async function deleteGallery(id){
+  if(!confirm('Delete this gallery and ALL its photos?')) return;
+  await api(`/api/galleries/${id}`, {method:'DELETE'});
+  ALL.galleries = ALL.galleries.filter(g=>g.id!==id);
+  renderGalleries(ALL.galleries);
+  toast('Gallery and all photos deleted');
+}
+
+// ── PAYMENTS ─────────────────────────────────────
+async function loadPayments(){
+  const data = await api('/api/payments');
+  if(data) ALL.payments = data;
+  renderPayments(ALL.payments);
+  updatePayStats(ALL.payments);
+}
+
+function updatePayStats(list){
+  const collected = list.reduce((s,p)=>s+(p.paid||0),0);
+  const overdue = list.filter(p=>p.status==='Overdue').reduce((s,p)=>s+(p.amount-p.paid),0);
+  const pending = list.filter(p=>p.status==='Pending'||p.status==='Partial').reduce((s,p)=>s+(p.amount-p.paid),0);
+  const total = list.reduce((s,p)=>s+(p.amount||0),0);
+  document.getElementById('ps-collected').textContent = fmtAmt(collected);
+  document.getElementById('ps-overdue').textContent = fmtAmt(overdue);
+  document.getElementById('ps-pending').textContent = fmtAmt(pending);
+  document.getElementById('ps-total').textContent = fmtAmt(total);
+}
+
+function renderPayments(list){
+  if(!list.length){ document.getElementById('payment-body').innerHTML=`<tr><td colspan="8"><div class="empty">No invoices yet.</div></td></tr>`; return; }
+  document.getElementById('payment-body').innerHTML = list.map(p=>`
+    <tr>
+      <td style="font-size:0.7rem;color:var(--muted);">INV-${String(p.id).padStart(3,'0')}</td>
+      <td><strong style="font-size:0.87rem;">${p.client}</strong></td>
+      <td style="font-size:0.78rem;color:var(--muted);max-width:180px;">${p.session||'—'}</td>
+      <td style="font-weight:600;white-space:nowrap;">${fmtAmt(p.amount)}</td>
+      <td style="color:var(--green);white-space:nowrap;">${fmtAmt(p.paid)}</td>
+      <td style="font-size:0.78rem;color:var(--muted);white-space:nowrap;">${p.due_date||'—'}</td>
+      <td>${statusBadge(p.status)}</td>
+      <td style="white-space:nowrap;">
+        <button class="btn-icon" onclick="toast('Invoice sent to client via email!')">📧</button>
+        ${p.status!=='Paid'?`<button class="btn-icon" style="color:var(--green);border-color:rgba(78,203,127,0.25);" onclick="markPaid(${p.id})">✓ Full</button>
+        <button class="btn-icon" style="color:var(--gold);border-color:rgba(201,168,76,0.25);" onclick="recordPartial(${p.id},${p.amount},${p.paid})">₹ Part</button>`:''}
+        <button class="btn-icon" onclick="sendPayWA('${p.client}',${p.amount},${p.paid},'${p.due_date||''}')">📱</button>
+        <button class="btn-danger" onclick="deletePayment(${p.id})">✕</button>
+      </td>
+    </tr>`).join('');
+}
+
+async function markPaid(id){
+  await api(`/api/payments/${id}/paid`,{method:'PUT'});
+  const p = ALL.payments.find(x=>x.id===id);
+  if(p){ p.status='Paid'; p.paid=p.amount; }
+  renderPayments(ALL.payments);
+  updatePayStats(ALL.payments);
+  toast('Payment marked as fully received!');
+}
+
+async function recordPartial(id, total, alreadyPaid){
+  const remaining = total - alreadyPaid;
+  const input = prompt(`Record partial payment for this invoice.\nTotal: ₹${total.toLocaleString('en-IN')}\nAlready paid: ₹${alreadyPaid.toLocaleString('en-IN')}\nRemaining: ₹${remaining.toLocaleString('en-IN')}\n\nEnter amount received now:`, remaining);
+  if(!input) return;
+  const received = parseInt(input);
+  if(isNaN(received)||received<=0){ toast('⚠ Invalid amount'); return; }
+  const p = ALL.payments.find(x=>x.id===id);
+  if(!p) return;
+  const newPaid = Math.min(p.paid + received, p.amount);
+  p.paid = newPaid;
+  p.status = newPaid >= p.amount ? 'Paid' : 'Partial';
+  // Update in DB
+  if(p.status==='Paid'){
+    await api(`/api/payments/${id}/paid`,{method:'PUT'});
+  }
+  renderPayments(ALL.payments);
+  updatePayStats(ALL.payments);
+  toast(`₹${received.toLocaleString('en-IN')} recorded. Status: ${p.status}`);
+}
+
+function sendPayWA(client, amount, paid, due){
+  const remaining = amount - paid;
+  const msg = encodeURIComponent(`Hi ${client}! 👑\n\nThis is a payment reminder from VIP VisualEye's Photography.\n\n💰 Total: ₹${amount.toLocaleString('en-IN')}\n✅ Paid: ₹${paid.toLocaleString('en-IN')}\n⏳ Remaining: ₹${remaining.toLocaleString('en-IN')}${due?'\n📅 Due: '+due:''}\n\nPlease complete your payment.\nUPI: 97155 54025\n\nThank you! — Lokesh & Ajay\n📸 @vipvisualeyes`);
+  window.open(`https://wa.me/?text=${msg}`,'_blank');
+}
+
+async function deletePayment(id){
+  if(!confirm('Delete this invoice?')) return;
+  await api(`/api/payments/${id}`,{method:'DELETE'});
+  ALL.payments = ALL.payments.filter(p=>p.id!==id);
+  renderPayments(ALL.payments);
+  updatePayStats(ALL.payments);
+  toast('Invoice deleted');
+}
+
+async function saveInvoice(){
+  const client = document.getElementById('inv-client').value.trim();
+  const session = document.getElementById('inv-session').value.trim();
+  const amount = parseInt(document.getElementById('inv-amount').value)||0;
+  const deposit = parseInt(document.getElementById('inv-deposit').value)||0;
+  if(!client){ toast('⚠ Please enter client name'); return; }
+  if(!amount){ toast('⚠ Please enter total amount'); return; }
+  if(deposit > amount){ toast('⚠ Deposit cannot exceed total amount'); return; }
+  // Determine initial status
+  const status = deposit >= amount ? 'Paid' : deposit > 0 ? 'Partial' : 'Pending';
+  const body = {
+    client, session, amount, deposit,
+    due_date: document.getElementById('inv-due').value,
+    notes: document.getElementById('inv-notes').value + (document.getElementById('inv-notes').value ? ' | ' : '') + 'Method: ' + _payMethod
+  };
+  const res = await api('/api/payments',{method:'POST',body:JSON.stringify(body)});
+  ALL.payments.unshift({id:Date.now(),...body,paid:deposit,status});
+  renderPayments(ALL.payments);
+  updatePayStats(ALL.payments);
+  closeMo('invoice');
+  // Clear all fields
+  ['inv-client','inv-session','inv-amount','inv-deposit','inv-due','inv-notes'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.value='';
+  });
+  _payMethod='UPI / GPay';
+  toast(res?.message||`Invoice created! Status: ${status}`);
+}
+
+// ── CLIENTS ──────────────────────────────────────
+async function loadClients(){
+  const data = await api('/api/clients');
+  if(data) ALL.clients = data;
+  renderClients(ALL.clients);
+}
+
+function renderClients(list){
+  if(!list.length){ document.getElementById('client-list').innerHTML='<div class="empty">No clients yet. Add your first client!</div>'; return; }
+  document.getElementById('client-list').innerHTML = list.map(c=>`
+    <div class="cl-row">
+      <div class="av">${(c.first||'?')[0]}${(c.last||' ')[0]}</div>
+      <div style="flex:1;min-width:0;">
+        <div style="font-weight:500;font-size:0.88rem;">${c.first} ${c.last}</div>
+        <div style="font-size:0.72rem;color:var(--muted);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${c.phone||''} · ${c.email||''}</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0;">
+        <div style="font-size:0.82rem;font-weight:600;color:var(--gold);">${fmtAmt(c.total_spent||0)}</div>
+        <div style="font-size:0.68rem;color:var(--muted);">${c.booking_count||0} session${(c.booking_count||0)!==1?'s':''}</div>
+      </div>
+      <span class="badge bm" style="margin-left:0.4rem;">${c.source||''}</span>
+      <button class="btn-danger" onclick="deleteClient(${c.id})">✕</button>
+    </div>`).join('');
+}
+
+function filterClients(){
+  const q = document.getElementById('cl-search').value.toLowerCase();
+  renderClients(ALL.clients.filter(c=> !q || (c.first+' '+c.last+' '+c.phone+' '+c.email).toLowerCase().includes(q)));
+}
+
+async function saveClient(){
+  const first = document.getElementById('cl-first').value.trim();
+  if(!first){ toast('Please enter a name'); return; }
+  const body = {first, last:document.getElementById('cl-last').value, email:document.getElementById('cl-email').value, phone:document.getElementById('cl-phone').value, city:document.getElementById('cl-city').value, source:document.getElementById('cl-source').value, notes:document.getElementById('cl-notes').value};
+  const res = await api('/api/clients',{method:'POST',body:JSON.stringify(body)});
+  ALL.clients.unshift({id:Date.now(),...body,booking_count:0,total_spent:0});
+  renderClients(ALL.clients);
+  closeMo('client');
+  ['cl-first','cl-last','cl-email','cl-phone','cl-city','cl-notes'].forEach(id=>document.getElementById(id).value='');
+  toast(res?.message||'Client saved!');
+}
+
+async function deleteClient(id){
+  if(!confirm('Delete this client?')) return;
+  await api(`/api/clients/${id}`,{method:'DELETE'});
+  ALL.clients = ALL.clients.filter(c=>c.id!==id);
+  renderClients(ALL.clients);
+  toast('Client deleted');
+}
+
+// ── REMINDERS ────────────────────────────────────
+async function loadReminders(){
+  const data = await api('/api/reminders');
+  if(data) ALL.reminders = data;
+  renderReminders(ALL.reminders);
+}
+
+function renderReminders(list){
+  const icons={
+    'Session Reminder (1 day before)':'📅',
+    'Session Reminder (1 week before)':'📅',
+    'Payment Due Reminder':'💳',
+    'Gallery Ready Notification':'🖼️',
+    'Follow-up After Delivery':'💬',
+    'Custom Message':'✉️',
+    'Session Reminder':'📅',
+    'Payment Reminder':'💳',
+    'Gallery Ready':'🖼️',
+    'Follow-up':'💬'
+  };
+
+  // Update all 4 stat counters
+  const sched = list.filter(r=>r.status==='Scheduled').length;
+  const sent  = list.filter(r=>r.status==='Sent').length;
+  const wa    = list.filter(r=>(r.channel||'').includes('WhatsApp')).length;
+  document.getElementById('rem-sched').textContent = sched;
+  document.getElementById('rem-sent').textContent  = sent;
+  document.getElementById('rem-wa').textContent    = wa;
+  document.getElementById('rem-total').textContent = list.length;
+
+  if(!list.length){
+    document.getElementById('reminder-list').innerHTML =
+      `<div class="empty">No reminders yet. Click <strong>+ Add Reminder</strong> to schedule one.</div>`;
+    return;
+  }
+
+  document.getElementById('reminder-list').innerHTML = list.map(r => {
+    const icon = icons[r.type] || '🔔';
+    const isWA = (r.channel||'').includes('WhatsApp');
+    const phone = r.phone || '';
+    const waMsg = encodeURIComponent(r.message||'');
+    const waLink = phone
+      ? `https://wa.me/${phone.replace(/\D/g,'')}?text=${waMsg}`
+      : `https://wa.me/?text=${waMsg}`;
+
+    return `
+    <div class="rem-item" id="rem-${r.id}">
+      <div class="rem-icon">${icon}</div>
+      <div style="flex:1;min-width:0;">
+        <div style="display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;margin-bottom:0.25rem;">
+          <span style="font-family:var(--font-d);font-size:0.75rem;letter-spacing:0.06em;">${r.type}</span>
+          ${statusBadge(r.status)}
+          <span class="badge bm">${r.channel||'WhatsApp'}</span>
+        </div>
+        <div style="font-size:0.73rem;color:var(--muted);">
+          👤 ${r.client} &nbsp;·&nbsp; 🕐 ${formatDateTime(r.datetime)}
+        </div>
+        <div style="font-size:0.8rem;margin-top:0.4rem;color:var(--text);opacity:0.75;font-style:italic;line-height:1.45;white-space:pre-line;">"${(r.message||'').substring(0,120)}${(r.message||'').length>120?'…':''}"</div>
+        <div style="display:flex;gap:0.4rem;margin-top:0.65rem;flex-wrap:wrap;">
+          ${isWA ? `<a href="${waLink}" target="_blank" class="btn-icon" style="color:#25D366;border-color:rgba(37,211,102,0.25);text-decoration:none;display:inline-flex;align-items:center;gap:3px;">📱 Send WhatsApp</a>` : ''}
+          ${r.status==='Scheduled' ? `<button class="btn-icon" style="color:var(--green);border-color:rgba(78,203,127,0.25);" onclick="markReminderSent(${r.id})">✓ Mark Sent</button>` : ''}
+          <button class="btn-icon" onclick="editReminder(${r.id})">✏ Edit</button>
+          <button class="btn-danger" onclick="deleteReminder(${r.id})">✕</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function formatDateTime(dt){
+  if(!dt) return '—';
+  try{
+    return new Date(dt).toLocaleString('en-IN',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});
+  }catch(e){ return dt; }
+}
+
+// ── Filter reminders ──────────────────────────────
+let _remFilter = 'all';
+function filterReminders(filter, btn){
+  _remFilter = filter;
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  const filtered = filter==='all'
+    ? ALL.reminders
+    : filter==='WhatsApp' || filter==='Email' || filter==='SMS'
+      ? ALL.reminders.filter(r=>(r.channel||'').includes(filter))
+      : ALL.reminders.filter(r=>r.status===filter);
+  renderRemindersFiltered(filtered);
+}
+
+function renderRemindersFiltered(list){
+  // Temporarily swap ALL.reminders, render, then restore
+  const orig = ALL.reminders;
+  ALL.reminders = list;
+  renderReminders(list);
+  ALL.reminders = orig;
+  // Restore real counts
+  document.getElementById('rem-sched').textContent = orig.filter(r=>r.status==='Scheduled').length;
+  document.getElementById('rem-sent').textContent  = orig.filter(r=>r.status==='Sent').length;
+  document.getElementById('rem-wa').textContent    = orig.filter(r=>(r.channel||'').includes('WhatsApp')).length;
+  document.getElementById('rem-total').textContent = orig.length;
+}
+
+// ── Channel selector ─────────────────────────────
+let _remChannel = 'WhatsApp';
+function selRemChannel(el){
+  document.querySelectorAll('#rem-channel-row .meth').forEach(b=>b.classList.remove('sel'));
+  el.classList.add('sel');
+  _remChannel = el.textContent.replace(/[^\w\s]/g,'').trim();
+  // Show/hide WA preview
+  const isWA = _remChannel === 'WhatsApp';
+  document.getElementById('wa-preview-box').style.display = isWA ? 'block' : 'none';
+  updateWAPreview();
+}
+
+// ── Auto-fill message templates ───────────────────
+function autoFillRemMsg(){
+  const type   = document.getElementById('rem-type').value;
+  const client = document.getElementById('rem-client').value.trim() || '{client}';
+  const tpl = {
+    'Session Reminder (1 day before)':
+`Hi ${client}! 📸
+
+This is Lokesh from VIP VisualEye's Photography.
+
+Just a reminder — your session is *tomorrow*. Please reach the venue on time and be ready!
+
+For any questions, call: 97155 54025
+
+See you soon! 👑`,
+
+    'Session Reminder (1 week before)':
+`Hi ${client}! 📸
+
+This is Lokesh from VIP VisualEye's Photography.
+
+Your photography session is coming up *next week*. Please confirm your availability and let us know if anything has changed.
+
+Call: 97155 54025
+
+Looking forward to capturing your special moments! 👑`,
+
+    'Payment Due Reminder':
+`Hi ${client}! 
+
+This is Ajay from VIP VisualEye's Photography.
+
+This is a gentle reminder that your payment is due. Kindly complete the payment at your earliest convenience.
+
+💳 UPI: 97155 54025
+✉ vipvisualeyes14@gmail.com
+
+Thank you for choosing us! 🙏`,
+
+    'Gallery Ready Notification':
+`Hi ${client}! 🎉
+
+Great news — your photos are ready!
+
+Your private gallery from VIP VisualEye's Photography is now live. Please check the gallery link sent to your email and download your photos.
+
+📸 @vipvisualeyes
+
+Thank you for choosing us! — Lokesh & Ajay 👑`,
+
+    'Follow-up After Delivery':
+`Hi ${client}! 
+
+Hope you loved your photos from VIP VisualEye's Photography! 📸
+
+We'd love to hear your feedback. A Google review or Instagram tag would mean a lot to us.
+
+📸 Instagram: @vipvisualeyes
+
+Thank you for trusting us with your memories! — Lokesh & Ajay 🙏`,
+  };
+
+  const msg = tpl[type];
+  if(msg){
+    const cur = document.getElementById('rem-msg').value;
+    // Auto-fill if empty or still has previous auto-fill content
+    if(!cur || cur.includes('{client}') || cur.startsWith('Hi ')){
+      document.getElementById('rem-msg').value = msg;
+      updateWAPreview();
+    }
+  }
+}
+
+function updateWAPreview(){
+  const msg = document.getElementById('rem-msg').value;
+  document.getElementById('wa-preview-text').textContent = msg;
+  const isWA = _remChannel === 'WhatsApp';
+  document.getElementById('wa-preview-box').style.display = isWA && msg ? 'block' : 'none';
+}
+
+// ── Send immediately via WhatsApp ─────────────────
+function sendNowWA(){
+  const client  = document.getElementById('rem-client').value.trim();
+  const phone   = document.getElementById('rem-phone').value.trim().replace(/\D/g,'');
+  const message = document.getElementById('rem-msg').value.trim();
+  if(!message){ toast('⚠ Please enter a message first'); return; }
+  const waMsg = encodeURIComponent(message);
+  const url = phone ? `https://wa.me/${phone}?text=${waMsg}` : `https://wa.me/?text=${waMsg}`;
+  window.open(url, '_blank');
+  toast('Opening WhatsApp…');
+}
+
+// ── Save reminder ─────────────────────────────────
+async function saveReminder(){
+  const client  = document.getElementById('rem-client').value.trim();
+  const datetime= document.getElementById('rem-dt').value;
+  const message = document.getElementById('rem-msg').value.trim();
+  const phone   = document.getElementById('rem-phone').value.trim();
+
+  if(!client)  { toast('⚠ Please enter a client name'); return; }
+  if(!datetime){ toast('⚠ Please set a send date & time'); return; }
+  if(!message) { toast('⚠ Please enter a message'); return; }
+
+  const body = {
+    type:     document.getElementById('rem-type').value,
+    client,
+    phone,
+    datetime,
+    channel:  _remChannel,
+    message
+  };
+
+  const res = await api('/api/reminders', {method:'POST', body:JSON.stringify(body)});
+  ALL.reminders.unshift({id:Date.now(), ...body, status:'Scheduled'});
+  renderReminders(ALL.reminders);
+  closeMo('reminder');
+
+  // Reset form
+  document.getElementById('rem-client').value  = '';
+  document.getElementById('rem-phone').value   = '';
+  document.getElementById('rem-dt').value      = '';
+  document.getElementById('rem-msg').value     = '';
+  document.getElementById('wa-preview-box').style.display = 'none';
+  _remChannel = 'WhatsApp';
+  document.querySelectorAll('#rem-channel-row .meth').forEach((b,i)=>b.classList.toggle('sel',i===0));
+
+  toast(res?.message || '✓ Reminder scheduled!');
+}
+
+// ── Mark reminder as sent ─────────────────────────
+async function markReminderSent(id){
+  await api(`/api/reminders/${id}`, {method:'PUT', body:JSON.stringify({status:'Sent'})});
+  const r = ALL.reminders.find(x=>x.id===id);
+  if(r) r.status = 'Sent';
+  renderReminders(ALL.reminders);
+  toast('✓ Marked as sent');
+}
+
+// ── Edit reminder (re-open modal pre-filled) ──────
+function editReminder(id){
+  const r = ALL.reminders.find(x=>x.id===id);
+  if(!r) return;
+  document.getElementById('rem-type').value   = r.type;
+  document.getElementById('rem-client').value = r.client;
+  document.getElementById('rem-phone').value  = r.phone||'';
+  document.getElementById('rem-dt').value     = r.datetime||'';
+  document.getElementById('rem-msg').value    = r.message||'';
+  _remChannel = r.channel||'WhatsApp';
+  document.querySelectorAll('#rem-channel-row .meth').forEach(b=>{
+    b.classList.toggle('sel', b.textContent.includes(_remChannel));
+  });
+  updateWAPreview();
+  // Delete old, save as new on submit
+  ALL.reminders = ALL.reminders.filter(x=>x.id!==id);
+  api(`/api/reminders/${id}`, {method:'DELETE'});
+  openMo('reminder');
+}
+
+// ── Delete reminder ───────────────────────────────
+async function deleteReminder(id){
+  if(!confirm('Delete this reminder?')) return;
+  await api(`/api/reminders/${id}`, {method:'DELETE'});
+  ALL.reminders = ALL.reminders.filter(r=>r.id!==id);
+  renderReminders(ALL.reminders);
+  toast('Reminder deleted');
+}
+
+// ── INQUIRIES ────────────────────────────────────
+async function loadInquiries(){
+  const data = await api('/api/inquiries');
+  if(data) ALL.inquiries = data;
+  renderInquiries(ALL.inquiries);
+}
+
+function renderInquiries(list){
+  if(!list.length){ document.getElementById('inquiry-list').innerHTML='<div class="empty">No inquiries yet.</div>'; return; }
+  document.getElementById('inquiry-list').innerHTML = list.map(q=>`
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0.72rem 0;border-bottom:1px solid var(--border);">
+      <div>
+        <div style="font-weight:500;font-size:0.87rem;">${q.name}</div>
+        <div style="font-size:0.72rem;color:var(--muted);">${q.event_type||''} · ${(q.created_at||'').split('T')[0]||q.created_at||''}</div>
+      </div>
+      <div style="display:flex;gap:0.4rem;align-items:center;">
+        ${statusBadge(q.status)}
+        <button class="btn-icon" onclick="updateInquiry(${q.id},'Replied')">Reply</button>
+        <button class="btn-icon" onclick="updateInquiry(${q.id},'Converted')">✓</button>
+      </div>
+    </div>`).join('');
+}
+
+async function updateInquiry(id, status){
+  await api(`/api/inquiries/${id}/status`,{method:'PUT',body:JSON.stringify({status})});
+  const q = ALL.inquiries.find(x=>x.id===id);
+  if(q) q.status=status;
+  renderInquiries(ALL.inquiries);
+  toast('Inquiry marked as '+status);
+}
+
+async function submitInquiry(){
+  const name = document.getElementById('inq-name').value.trim();
+  if(!name){ toast('Please enter your name'); return; }
+  const body = {name, email:document.getElementById('inq-email').value, phone:document.getElementById('inq-phone').value, event_type:document.getElementById('inq-type').value, event_date:document.getElementById('inq-date').value, venue:document.getElementById('inq-venue').value, message:document.getElementById('inq-msg').value};
+  const res = await api('/api/inquiries',{method:'POST',body:JSON.stringify(body)});
+  ALL.inquiries.unshift({id:Date.now(),...body,status:'New',created_at:new Date().toISOString()});
+  renderInquiries(ALL.inquiries);
+  ['inq-name','inq-email','inq-phone','inq-venue','inq-msg'].forEach(id=>document.getElementById(id).value='');
+  toast(res?.message||'Inquiry submitted! We will contact you soon.');
+}
+
+// ── VISITING CARD ────────────────────────────────
+function updateCard(){
+  const n1=document.getElementById('cn1').value, n2=document.getElementById('cn2').value;
+  const t=document.getElementById('ct').value;
+  const p1=document.getElementById('cp1').value, p2=document.getElementById('cp2').value;
+  const em=document.getElementById('ce').value, loc=document.getElementById('cl').value, ig=document.getElementById('ci').value;
+  document.getElementById('card-names-display').innerHTML=`${n1}<br/>${n2}`;
+  document.getElementById('card-title-display').textContent=t;
+  document.getElementById('card-details-display').innerHTML=`📞 ${p1} / ${p2}<br/>✉ ${em}<br/>📍 ${loc}<br/>📸 ${ig}`;
+  toast('Card updated!');
+}
+function shareCardWA(){
+  const n1=document.getElementById('cn1').value, n2=document.getElementById('cn2').value;
+  const msg=encodeURIComponent(`👑 *VIP VisualEye's Photography & Videography*\n\n📸 ${n1} & ${n2} — Photographers\n📞 ${document.getElementById('cp1').value} / ${document.getElementById('cp2').value}\n✉ ${document.getElementById('ce').value}\n📍 ${document.getElementById('cl').value}\n📸 ${document.getElementById('ci').value}\n\nBook your special session today!`);
+  window.open(`https://wa.me/?text=${msg}`,'_blank');
+}
+function copyCardInfo(){
+  const txt=`VIP VisualEye's Photography & Videography\n${document.getElementById('cn1').value} & ${document.getElementById('cn2').value} — Photographers\nPhone: ${document.getElementById('cp1').value} / ${document.getElementById('cp2').value}\nEmail: ${document.getElementById('ce').value}\nLocation: ${document.getElementById('cl').value}\nInstagram: ${document.getElementById('ci').value}`;
+  navigator.clipboard.writeText(txt).then(()=>toast('Contact info copied!')).catch(()=>toast('Copy manually: VIP VisualEye\'s Photography'));
+}
+function downloadCard(){
+  const cv=document.createElement('canvas'); cv.width=1050; cv.height=600;
+  const ctx=cv.getContext('2d');
+  // Front
+  ctx.fillStyle='#0d0d0d'; ctx.fillRect(0,0,525,600);
+  const g1=ctx.createLinearGradient(350,0,525,600); g1.addColorStop(0,'#B8860B'); g1.addColorStop(0.5,'#C9A84C'); g1.addColorStop(1,'#8B6914');
+  ctx.save(); ctx.beginPath(); ctx.moveTo(350,0); ctx.lineTo(525,0); ctx.lineTo(525,600); ctx.lineTo(180,600); ctx.closePath(); ctx.fillStyle=g1; ctx.globalAlpha=0.85; ctx.fill(); ctx.restore();
+  ctx.globalAlpha=1; ctx.font='bold 70px serif'; ctx.fillStyle='#C9A84C'; ctx.textAlign='center'; ctx.fillText('VIP',262,310);
+  ctx.font='14px sans-serif'; ctx.fillStyle='#C0C0C0'; ctx.letterSpacing='6px'; ctx.fillText("VISUALEYE'S",262,340);
+  ctx.font='10px sans-serif'; ctx.fillStyle='#888'; ctx.fillText('PHOTOGRAPHY',262,360);
+  // Back
+  ctx.fillStyle='#0d0d0d'; ctx.fillRect(525,0,525,600);
+  ctx.save(); ctx.beginPath(); ctx.moveTo(875,0); ctx.lineTo(1050,0); ctx.lineTo(1050,600); ctx.lineTo(700,600); ctx.closePath(); ctx.fillStyle=g1; ctx.globalAlpha=0.85; ctx.fill(); ctx.restore();
+  ctx.globalAlpha=1; ctx.font='bold 26px serif'; ctx.fillStyle='#fff'; ctx.textAlign='left';
+  ctx.fillText(document.getElementById('cn1').value,555,120); ctx.fillText(document.getElementById('cn2').value,555,160);
+  ctx.font='10px sans-serif'; ctx.fillStyle='#C9A84C'; ctx.letterSpacing='4px'; ctx.fillText('PHOTOGRAPHERS',555,190);
+  ctx.font='13px sans-serif'; ctx.fillStyle='#ddd'; ctx.letterSpacing='0';
+  ctx.fillText('📞 '+document.getElementById('cp1').value+' / '+document.getElementById('cp2').value,555,240);
+  ctx.fillText('✉ '+document.getElementById('ce').value,555,275);
+  ctx.fillText('📍 '+document.getElementById('cl').value,555,310);
+  ctx.fillText('📸 '+document.getElementById('ci').value,555,345);
+  const link=document.createElement('a'); link.download='VIPVisualEyes_Card.png'; link.href=cv.toDataURL('image/png'); link.click();
+  toast('Card downloaded!');
+}
+
+// ── FRAMES ───────────────────────────────────────
+const FRAMES=[
+  {id:'royal-gold',name:'Royal Gold',type:'Wedding / Portrait',colors:['#C9A84C','#F5E090','#8B6914'],style:'corner',dp:500,pp:1200},
+  {id:'classic-black',name:'Classic Black',type:'All Events',colors:['#1a1a1a','#333','#C9A84C'],style:'border',dp:300,pp:800},
+  {id:'diamond',name:'Diamond Crown',type:'Premium',colors:['#C0C0C0','#E8E8E8','#C9A84C'],style:'diamond',dp:600,pp:1500},
+  {id:'floral-gold',name:'Floral Gold',type:'Wedding',colors:['#C9A84C','#F5E090','#fff'],style:'floral',dp:500,pp:1200},
+  {id:'minimal-line',name:'Minimal Line',type:'Portrait',colors:['#C9A84C','#888','#111'],style:'minimal',dp:200,pp:600},
+  {id:'event-bold',name:'Event Bold',type:'Events / Corporate',colors:['#111','#C9A84C','#F5E090'],style:'bold',dp:400,pp:1000},
+];
+let selFrame=FRAMES[0], uploadedImg=null;
+
+function renderFrames(){
+  document.getElementById('fr-grid').innerHTML=FRAMES.map(f=>`
+    <div class="fr-card${f.id===selFrame.id?' sel-fr':''}" onclick="pickFrame('${f.id}')">
+      <div class="fr-prev"><canvas id="fpv-${f.id}" width="200" height="200"></canvas></div>
+      <div class="fr-lbl">
+        <div class="fr-name">${f.name}</div>
+        <div class="fr-type">${f.type}</div>
+        <div class="fr-price">Digital ₹${f.dp.toLocaleString()} · Print ₹${f.pp.toLocaleString()}</div>
+      </div>
+    </div>`).join('');
+  FRAMES.forEach(f=>{ const c=document.getElementById('fpv-'+f.id); if(c) drawPreview(c,f); });
+}
+
+function drawPreview(cv,f){
+  const ctx=cv.getContext('2d'); const w=200,h=200;
+  ctx.fillStyle='#1a1a1a'; ctx.fillRect(0,0,w,h);
+  ctx.fillStyle='#2a2a2a'; ctx.fillRect(18,18,w-36,h-36);
+  ctx.fillStyle='#3a3a3a'; ctx.font='24px serif'; ctx.textAlign='center'; ctx.fillText('📷',w/2,h/2+8);
+  drawFrame(ctx,w,h,f,1);
+}
+
+function drawFrame(ctx,w,h,f,op){
+  ctx.save(); ctx.globalAlpha=op;
+  const [c1,c2,c3]=f.colors; const bw=Math.round(w*0.045);
+  if(f.style==='corner'){
+    const cs=Math.round(w*0.2);
+    [[0,0,1,1],[w,0,-1,1],[0,h,1,-1],[w,h,-1,-1]].forEach(([x,y,sx,sy])=>{
+      ctx.strokeStyle=c1; ctx.lineWidth=3; ctx.beginPath(); ctx.moveTo(x+sx*cs,y); ctx.lineTo(x,y); ctx.lineTo(x,y+sy*cs); ctx.stroke();
+    });
+  } else if(f.style==='border'){
+    ctx.strokeStyle=c3; ctx.lineWidth=bw; ctx.strokeRect(bw/2,bw/2,w-bw,h-bw);
+    ctx.strokeStyle=c1; ctx.lineWidth=1; ctx.strokeRect(bw+3,bw+3,w-bw*2-6,h-bw*2-6);
+  } else if(f.style==='diamond'){
+    ctx.strokeStyle=c1; ctx.lineWidth=3; ctx.strokeRect(4,4,w-8,h-8);
+    const ds=12; [[4,4],[w-4,4],[4,h-4],[w-4,h-4]].forEach(([x,y])=>{
+      ctx.fillStyle=c3; ctx.beginPath(); ctx.moveTo(x,y-ds); ctx.lineTo(x+ds,y); ctx.lineTo(x,y+ds); ctx.lineTo(x-ds,y); ctx.closePath(); ctx.fill();
+    });
+  } else if(f.style==='floral'){
+    ctx.strokeStyle=c1; ctx.lineWidth=1.5;
+    for(let a=0;a<4;a++){ ctx.beginPath(); ctx.arc(w*0.12,h*0.12,w*0.1+a*4,0,Math.PI*2); ctx.globalAlpha=op*(0.2+a*0.1); ctx.stroke(); }
+    ctx.globalAlpha=op;
+  } else if(f.style==='minimal'){
+    ctx.strokeStyle=c1; ctx.lineWidth=1.5; ctx.strokeRect(10,10,w-20,h-20);
+    ctx.beginPath(); ctx.moveTo(20,h-Math.round(h*0.14)); ctx.lineTo(w-20,h-Math.round(h*0.14)); ctx.stroke();
+  } else if(f.style==='bold'){
+    const bh=Math.round(h*0.13);
+    const grd=ctx.createLinearGradient(0,0,w,0); grd.addColorStop(0,c2); grd.addColorStop(0.5,c3); grd.addColorStop(1,c2);
+    ctx.fillStyle='rgba(0,0,0,0.9)'; ctx.fillRect(0,0,w,bh); ctx.fillRect(0,h-bh,w,bh);
+    ctx.fillStyle=grd; ctx.font=`bold ${Math.round(w*0.055)}px Cinzel,serif`; ctx.textAlign='center'; ctx.fillText("VIP VisualEye's",w/2,bh*0.72);
+  }
+  // Bottom brand bar for corner/diamond/floral
+  if(['corner','diamond','floral'].includes(f.style)){
+    const bh=Math.round(h*0.15);
+    ctx.globalAlpha=op; ctx.fillStyle='rgba(0,0,0,0.82)'; ctx.fillRect(0,h-bh,w,bh);
+    const grd=ctx.createLinearGradient(0,0,w,0); grd.addColorStop(0,c3); grd.addColorStop(0.5,c2); grd.addColorStop(1,c3);
+    ctx.fillStyle=grd; ctx.font=`bold ${Math.round(w*0.055)}px Cinzel,serif`; ctx.textAlign='center';
+    ctx.fillText("VIP VisualEye's",w/2,h-Math.round(bh*0.55));
+    ctx.font=`${Math.round(w*0.032)}px Jost,sans-serif`; ctx.fillStyle='#bbb';
+    ctx.fillText('PHOTOGRAPHY',w/2,h-Math.round(bh*0.2));
+  }
+  ctx.restore();
+}
+
+function pickFrame(id){
+  selFrame=FRAMES.find(f=>f.id===id)||FRAMES[0];
+  renderFrames();
+  document.getElementById('sel-fr-name').textContent=selFrame.name;
+  document.getElementById('sel-fr-price').textContent='₹'+selFrame.dp.toLocaleString();
+  if(uploadedImg) applyFrame();
+}
+
+function loadPhoto(e){
+  const file=e.target.files[0]; if(!file) return;
+  const reader=new FileReader();
+  reader.onload=ev=>{ const img=new Image(); img.onload=()=>{ uploadedImg=img; document.getElementById('canvas-area').style.display='block'; applyFrame(); toast('Photo loaded! Select a frame.'); }; img.src=ev.target.result; };
+  reader.readAsDataURL(file);
+}
+
+function applyFrame(){
+  if(!uploadedImg) return;
+  const cv=document.getElementById('fr-canvas'); const ctx=cv.getContext('2d'); const sz=800;
+  cv.width=sz; cv.height=sz;
+  const iw=uploadedImg.width, ih=uploadedImg.height;
+  const sc=Math.max(sz/iw,sz/ih); const sw=iw*sc, sh=ih*sc;
+  ctx.drawImage(uploadedImg,(sz-sw)/2,(sz-sh)/2,sw,sh);
+  drawFrame(ctx,sz,sz,selFrame,parseInt(document.getElementById('fr-opacity').value)/100);
+}
+
+function downloadFramed(){
+  if(!uploadedImg){ toast('Please upload a photo first'); return; }
+  const cv=document.getElementById('fr-canvas');
+  const a=document.createElement('a'); a.download=`VIPVisualEyes_${selFrame.name.replace(/\s/g,'_')}.jpg`;
+  a.href=cv.toDataURL('image/jpeg',0.95); a.click(); toast('Framed photo downloaded!');
+}
+
+// ── PRICE LIST ───────────────────────────────────
+const photoPkgs=[
+  {name:'Essential',badge:'Starter',price:15000,sub:'Per session',feat:false,items:['4 hours coverage','200 edited photos','Online gallery','1 photographer','Delivery in 7 days']},
+  {name:'Premium',badge:'Popular ★',price:30000,sub:'Per session',feat:true,items:['8 hours coverage','500 edited photos','Online gallery + album','Teaser reel (30 sec)','Delivery in 7 days']},
+  {name:'Royal',badge:'Full Day',price:55000,sub:'Per session',feat:false,items:['Full day coverage','Unlimited edited photos','Album + canvas print','2 photographers','Full video highlight','Complimentary frame set']},
+];
+const videoPkgs=[
+  {name:'Short Reel',badge:'Social',price:8000,sub:'Up to 2 min',feat:false,items:['2–3 hrs shoot','Edited reel','Background music','1 revision']},
+  {name:'Highlight Film',badge:'Events ★',price:20000,sub:'5–10 min',feat:true,items:['Full event coverage','Cinematic editing','Music + voiceover','2 revisions','Delivery in 7 days']},
+  {name:'Cinematic',badge:'Wedding',price:40000,sub:'Full film',feat:false,items:['Full day video','Cinematic wedding film','Teaser + full film','Unlimited revisions']},
+];
+const addons=[
+  {s:'Extra Hour',d:'Additional coverage',p:2000},{s:'Printed Album',d:'30–40 pages premium',p:8000},
+  {s:'Canvas Print',d:'20×30 inch framed',p:4500},{s:'Same-Day Teaser',d:'5–10 edits on event day',p:3000},
+  {s:'Drone Coverage',d:'Aerial shots',p:5000},{s:'USB Delivery',d:'All photos on USB',p:1500},
+];
+
+function renderPriceList(){
+  const pkgHTML=pkgs=>pkgs.map(p=>`
+    <div class="pl-pkg${p.feat?' feat':''}">
+      <div class="pl-top">
+        <span class="badge ${p.feat?'by':'bm'}" style="margin-bottom:0.5rem;display:inline-block;">${p.badge}</span>
+        <div style="font-family:var(--font-d);font-size:0.88rem;letter-spacing:0.07em;margin-bottom:0.45rem;">${p.name}</div>
+        <div class="pl-amt">₹${p.price.toLocaleString()}</div>
+        <div style="font-size:0.7rem;color:var(--muted);margin-top:0.2rem;">${p.sub}</div>
+      </div>
+      <div class="pl-body">
+        ${p.items.map(it=>`<div class="pl-item">${it}</div>`).join('')}
+        <button class="btn btn-sm" style="width:100%;margin-top:0.85rem;" onclick="nav('booking',null);openMo('booking')">Book Now</button>
+      </div>
+    </div>`).join('');
+  document.getElementById('pl-photo').innerHTML=pkgHTML(photoPkgs);
+  document.getElementById('pl-video').innerHTML=pkgHTML(videoPkgs);
+  document.getElementById('pl-addons').innerHTML=addons.map(a=>`<tr><td><strong>${a.s}</strong></td><td style="color:var(--muted);">${a.d}</td><td style="color:var(--gold);font-weight:600;">₹${a.p.toLocaleString()}</td><td></td></tr>`).join('');
+  document.getElementById('pl-frames').innerHTML=FRAMES.map(f=>`<tr><td><strong>${f.name}</strong></td><td style="color:var(--muted);font-size:0.75rem;">${f.type}</td><td style="color:var(--gold);font-weight:600;">₹${f.dp.toLocaleString()}</td><td style="color:var(--gold);font-weight:600;">₹${f.pp.toLocaleString()}</td></tr>`).join('');
+}
+
+function downloadPriceList(){
+  const html=`<!DOCTYPE html><html><head><meta charset="UTF-8"/><title>VIP VisualEye's Price List</title><style>
+  body{font-family:Georgia,serif;background:#fff;color:#111;max-width:820px;margin:0 auto;padding:2rem;}
+  h1{color:#C9A84C;font-size:1.8rem;text-align:center;margin-bottom:0.25rem;}
+  .sub{text-align:center;color:#888;font-size:0.82rem;margin-bottom:2rem;}
+  h2{color:#C9A84C;font-size:1rem;border-bottom:1px solid #ddd;padding-bottom:0.35rem;margin:1.75rem 0 0.85rem;}
+  table{width:100%;border-collapse:collapse;margin-bottom:1.25rem;font-size:0.85rem;}
+  th{background:#111;color:#C9A84C;padding:0.55rem 0.75rem;text-align:left;font-size:0.7rem;letter-spacing:0.08em;}
+  td{padding:0.55rem 0.75rem;border-bottom:1px solid #eee;}
+  .price{font-weight:700;color:#C9A84C;}
+  .notes{background:#fafafa;border-left:3px solid #C9A84C;padding:0.9rem 1.1rem;font-size:0.79rem;color:#555;line-height:1.85;}
+  @media print{body{padding:0.75rem;}}</style></head><body>
+  <h1>👑 VIP VisualEye's Photography</h1>
+  <div class="sub">Lokesh & Ajay — Photographers | 97155 54025 / 9894283672 | Ocheri, Ranipet<br/>vipvisualeyes14@gmail.com | @vipvisualeyes</div>
+  <h2>📸 Photography Packages</h2><table><tr><th>Package</th><th>Inclusions</th><th>Price</th></tr>${photoPkgs.map(p=>`<tr><td><strong>${p.name}</strong></td><td>${p.items.join(', ')}</td><td class="price">₹${p.price.toLocaleString()}</td></tr>`).join('')}</table>
+  <h2>🎬 Videography Packages</h2><table><tr><th>Package</th><th>Inclusions</th><th>Price</th></tr>${videoPkgs.map(p=>`<tr><td><strong>${p.name}</strong></td><td>${p.items.join(', ')}</td><td class="price">₹${p.price.toLocaleString()}</td></tr>`).join('')}</table>
+  <h2>✦ Add-Ons</h2><table><tr><th>Service</th><th>Description</th><th>Price</th></tr>${addons.map(a=>`<tr><td><strong>${a.s}</strong></td><td>${a.d}</td><td class="price">₹${a.p.toLocaleString()}</td></tr>`).join('')}</table>
+  <h2>🖼️ Photo Frames</h2><table><tr><th>Frame</th><th>Best For</th><th>Digital</th><th>Print</th></tr>${FRAMES.map(f=>`<tr><td><strong>${f.name}</strong></td><td>${f.type}</td><td class="price">₹${f.dp.toLocaleString()}</td><td class="price">₹${f.pp.toLocaleString()}</td></tr>`).join('')}</table>
+  <div class="notes"><strong>Terms:</strong><br/>✦ 50% advance to confirm booking · ✦ Balance on delivery day · ✦ Travel extra beyond 30km from Ocheri · ✦ Delivery 7–10 working days · ✦ GST applicable</div>
+  <script>window.onload=()=>window.print();<\/script></body></html>`;
+  const b=new Blob([html],{type:'text/html'}); window.open(URL.createObjectURL(b),'_blank');
+  toast('Price list opened — Save as PDF from print dialog');
+}
+
+function sharePriceWA(){
+  const lines=['👑 *VIP VisualEye\'s Photography & Videography*','Lokesh & Ajay | Ocheri, Ranipet','','📸 *Photography*'];
+  photoPkgs.forEach(p=>lines.push(`• ${p.name}: ₹${p.price.toLocaleString()}`));
+  lines.push('','🎬 *Videography*');
+  videoPkgs.forEach(p=>lines.push(`• ${p.name}: ₹${p.price.toLocaleString()}`));
+  lines.push('','📞 97155 54025 / 9894283672','✉ vipvisualeyes14@gmail.com','📸 @vipvisualeyes');
+  window.open(`https://wa.me/?text=${encodeURIComponent(lines.join('\n'))}`,'_blank');
+}
+
+// ── INIT ─────────────────────────────────────────
+// Mode is passed from Flask via data attributes on body
+initAuth();
+renderFrames();
+renderPriceList();
+</script>
+</body>
+</html>
