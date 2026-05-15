@@ -1,1 +1,1 @@
-Photography
+VIP Photography
