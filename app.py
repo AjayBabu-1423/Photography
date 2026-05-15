@@ -11,7 +11,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'gif', 'webp', 'mp4', 'mov'}
 
 # ── ADMIN PASSWORD — change this in production! ───
-ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', 'vip@admin2024')
+ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', 'vip@8778')
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
